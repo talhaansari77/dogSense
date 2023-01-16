@@ -13,7 +13,7 @@ const TriHeader = ({onPressMenu, onChangeSearch, onPressProfile}) => {
         <CustomSearch height={50} width={'70%'} onChangeText={onChangeSearch} />
       )}
       RightSide={() => (
-        <ProfilePic size={30} borderWidth={0} onPressEdit={onPressProfile} />
+        <ProfilePic size={30} borderWidth={0} onPressProfile={onPressProfile} />
       )}
     />
   );

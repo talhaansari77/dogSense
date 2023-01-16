@@ -13,6 +13,7 @@ const ProfilePic = ({
   editable = false,
   onPressEdit,
   image=images.profilePic,
+  onPressProfile
 }) => {
   const styles = StyleSheet.create({
     profileContainer: {
@@ -43,7 +44,7 @@ const ProfilePic = ({
   });
   return (
     <View>
-      <TouchableOpacity activeOpacity={0.8} style={styles.profileContainer}>
+      <TouchableOpacity onPress={onPressProfile} activeOpacity={0.8} style={styles.profileContainer}>
         <Image style={commonStyles.img} source={image} />
       </TouchableOpacity>
       {editable ? (
