@@ -9,8 +9,8 @@ const CustomSearch = props => {
   return (
     <View
       style={{
-        width: '90%',
-        height: verticalScale(45),
+        width:  props.width||'95%',
+        height: props.height||verticalScale(45),
         backgroundColor: colors.grey,
         borderRadius: 30,
         alignSelf: 'center',
@@ -28,7 +28,7 @@ const CustomSearch = props => {
         <TextInput
           style={[
             {
-              width: props.inputWidth || '95%',
+              width: props.inputWidth || '90%',
               height: props.inputHeight || '100%',
               marginLeft: props.inputLeftMargin || 10,
               paddingRight: props.paddingRight || 10,
