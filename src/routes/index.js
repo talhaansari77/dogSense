@@ -16,7 +16,7 @@ const RootNavigator = () => {
       <Stack.Screen name="MainStack" component={MainStack} />
 
       </Stack.Navigator>
-      <StatusBar barStyle={'light-content'} />
+      {/* <StatusBar barStyle={'light-content'} /> */}
     </NavigationContainer>
   );
 };

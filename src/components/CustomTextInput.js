@@ -5,18 +5,18 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
-  Platform
-} from "react-native";
-import React from "react";
+  Platform,
+} from 'react-native';
+import React from 'react';
 import {
   moderateScale,
   scale,
   ScaledSheet,
   verticalScale,
-} from "react-native-size-matters";
-import CustomText from "./CustomText";
-import {colors} from "../utils/Colors"
-import commonStyles from "../utils/CommonStyles";
+} from 'react-native-size-matters';
+import CustomText from './CustomText';
+import {colors} from '../utils/Colors';
+import commonStyles from '../utils/CommonStyles';
 
 const CustomTextInput = ({
   eyeClick,
@@ -46,63 +46,68 @@ const CustomTextInput = ({
         disabled={!props.onPress}
         style={[
           {
-            width: props.width || "100%",
+            width: props.width || '100%',
             height: props.height || verticalScale(50),
             borderRadius: props.borderRadius || moderateScale(30),
             backgroundColor: props.backgroundColor,
             marginTop: props.marginTop || verticalScale(0),
-            flexDirection: "row",
-            borderColor: props.borderColor ,
-            alignItems: "center",
+            flexDirection: 'row',
+            borderColor: props.borderColor,
+            alignItems: 'center',
             paddingLeft: props.paddingLeft,
+            borderColor:props.borderColor,
+            borderWidth:props.borderWidth,
+            backgroundColor: colors.white,
 
-            backgroundColor:colors.white,
-
-            shadowColor: Platform.OS=="ios"?"#ced4da":colors.black,
+            shadowColor: Platform.OS == 'ios' ? '#ced4da' : colors.black,
             shadowRadius: 8,
             elevation: 5,
-            alignItems: "center",
+            alignItems: 'center',
             shadowOpacity: 0.5,
-        
-            shadowOffset: { width: 3, height: 5 },
+
+            shadowOffset: {width: 3, height: 5},
           },
-        ]}
-      >
-        {
-          leftIcon?(
-            <View style={{
+        ]}>
+        {leftIcon ? (
+          <View
+            style={{
+              width: iconWidth || verticalScale(52),
+              height: iconHeight || verticalScale(52),
+              // marginLeft: verticalScale(10),
+              borderColor: props.iconBorderColor,
+              borderWidth:1,
+              padding:10,
+              borderRadius: moderateScale(100),
+              backgroundColor:colors.white,
+              alignItems:"center",
+              justifyContent:"center"
 
-              width:  iconWidth ||scale(20),
-              height:  iconHeight||verticalScale(20),
-              marginLeft:verticalScale(10),
-
-            }} >
-           <Image style={commonStyles.img} source={leftIcon} />
-
-
-            </View>
-
-          ):<></>
-        }
-
-
+            }}>
+            <Image style={{height:"80%",width:'80%',tintColor:props.tintColor}} source={leftIcon} />
+          </View>
+        ) : (
+          <></>
+        )}
 
         <TextInput
           style={[
             {
-              width: props.inputWidth  || "95%",
-              height: props.inputHeight || "100%",
+              width: props.inputWidth || '95%',
+              height: props.inputHeight || '100%',
               marginLeft: props.inputLeftMargin || 10,
               paddingRight: props.paddingRight || 10,
+              paddingLeft: props.paddingLeft || 10,
               paddingHorizontal: props.paddingHorizontal,
-              fontFamily: props.fontFamily || "Montserrat-regular",
+              fontFamily: props.fontFamily || 'Montserrat-regular',
               color: props.color || colors.white,
               fontSize: verticalScale(13),
+              
               // textAlign: props.textAlign || "center",
-              multiline: props.multiline
+              multiline: props.multiline,
               // alignSelf: props.alignItems || "center"
             },
           ]}
+          onPressIn={props.onPressIn}
           onChangeText={props.onChangeText}
           value={props.value}
           numberOfLines={props.numberOfLines}
@@ -113,8 +118,6 @@ const CustomTextInput = ({
           placeholderTextColor={props.placeholderTextColor}
           secureTextEntry={props.secureTextEntry}
         />
-       
-
       </TouchableOpacity>
       {error ? (
         <CustomText
@@ -122,7 +125,7 @@ const CustomTextInput = ({
           children={error}
           fontSize={verticalScale(8)}
           color={colors.red}
-          fontWeight={"600"}
+          fontWeight={'600'}
           marginTop={verticalScale(5)}
         />
       ) : null}
@@ -132,8 +135,8 @@ const CustomTextInput = ({
 export default CustomTextInput;
 const styles = ScaledSheet.create({
   icon: {
-    width: "20@s",
-    height: "20@vs",
-    marginLeft:verticalScale(10),
+    width: '20@s',
+    height: '20@vs',
+    marginLeft: verticalScale(10),
   },
 });

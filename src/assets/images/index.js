@@ -1,6 +1,7 @@
 export const images={
 
-   appIcon: require("../images/AppIcon.png")
+   appIcon: require("./AppIcon.png"),
+   profilePic: require("./profilePic.jpeg"),
 
 
 
