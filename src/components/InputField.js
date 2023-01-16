@@ -14,6 +14,8 @@ const InputField = ({
   leftIcon = icons.facebook,
   height,
   width,
+  iconWidth,
+  iconHeight
 }) => {
   const [focused, setFocused] = useState(false);
   return (
@@ -23,6 +25,8 @@ const InputField = ({
         onChangeText={onChangeText}
         height={height}
         width={width}
+        iconWidth={iconWidth}
+        iconHeight={iconHeight}
         value={value}
         keyboardType={keyboardType}
         placeholder={placeholder}
