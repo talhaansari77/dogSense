@@ -24,6 +24,15 @@ import { colors } from './Colors';
       alignItems: 'center',
       flexDirection: 'row',
     },
+    rowSpaceBetween: {
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
+    row: {
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
   
     padding: {
       paddingHorizontal: 20,
@@ -44,6 +53,10 @@ import { colors } from './Colors';
     },
     
     containerCenter: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    ph10: {
       justifyContent: 'center',
       alignItems: 'center',
     },

@@ -8,6 +8,11 @@ export const colors = {
     red: 'red',
     grey:"#e9edf0",
     grey1:"#9facbb",
+    grey3:"#878787",
+    darkCyan:"#00404A",
+    cyan:"#10C8F1",
+    brown:"#735139",
+    purple:"#5243AC",
   };
   
   
