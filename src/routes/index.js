@@ -11,9 +11,11 @@ const RootNavigator = () => {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer >
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{headerShown: false}}
+      initialRouteName="MainStack"
+      >
+      <Stack.Screen name="AuthStack" component={AuthStack} />
       <Stack.Screen name="MainStack" component={MainStack} />
-        <Stack.Screen name="AuthStack" component={AuthStack} />
 
       </Stack.Navigator>
       {/* <StatusBar barStyle={'light-content'} /> */}

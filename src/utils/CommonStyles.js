@@ -29,8 +29,7 @@ import { colors } from './Colors';
       paddingHorizontal: 20,
     },
   
-    justify: {
-      justifyContent: 'space-between',
+    rowContainer: {
       alignItems: 'center',
       flexDirection: 'row',
     },
@@ -51,12 +50,17 @@ import { colors } from './Colors';
     IosPadding:{
       flex: 1,paddingTop:Platform.OS=="ios"?verticalScale(40):5,
       paddingHorizontal:moderateScale(15),
-      backgroundColor:colors.white
+    },
+    IosMainPadding:{
+      flex: 1,paddingTop:Platform.OS=="ios"?verticalScale(40):5,
     }
   });
 
   export const PH10 = styled(View, {
     paddingHorizontal: scale(10),
+  });
+  export const PH15 = styled(View, {
+    paddingHorizontal: scale(15),
   });
   export const PH20 = styled(View, {
     paddingHorizontal: scale(20),

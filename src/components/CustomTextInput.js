@@ -59,23 +59,21 @@ const CustomTextInput = ({
             borderWidth:props.borderWidth,
             backgroundColor: colors.white,
 
-            shadowColor: Platform.OS == 'ios' ? '#ced4da' : colors.black,
-            shadowRadius: 8,
-            elevation: 5,
-            alignItems: 'center',
-            shadowOpacity: 0.5,
-
-            shadowOffset: {width: 3, height: 5},
+           
           },
         ]}>
         {leftIcon ? (
           <View
             style={{
               width: iconWidth || verticalScale(52),
-              height: iconHeight || verticalScale(52),
+              height: iconHeight || verticalScale(49),
               // marginLeft: verticalScale(10),
               borderColor: props.iconBorderColor,
-              borderWidth:1,
+              // borderWidth:1,
+              borderTopWidth:0.5,
+              borderLeftWidth:0.5,
+              borderBottomWidth:0.2,
+              borderRightWidth:1,
               padding:10,
               borderRadius: moderateScale(100),
               backgroundColor:colors.white,
@@ -83,7 +81,9 @@ const CustomTextInput = ({
               justifyContent:"center"
 
             }}>
-            <Image style={{height:"80%",width:'80%',tintColor:props.tintColor}} source={leftIcon} />
+            <Image style={{height:"60%",width:'60%',tintColor:props.tintColor}} 
+            resizeMode="contain"
+            source={leftIcon} />
           </View>
         ) : (
           <></>

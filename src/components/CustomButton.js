@@ -34,7 +34,7 @@ function CustomButton({
       style={[
         {
           backgroundColor: backgroundColor || colors.primary,
-          width: width || '95%',
+          width: width || '100%',
           height: height || verticalScale(48),
           borderRadius: borderRadius || 30,
           alignItems: alignItems || 'center',

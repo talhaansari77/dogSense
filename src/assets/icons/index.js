@@ -4,7 +4,9 @@ export const icons={
     google:require("../icons/google.png"),
     facebook:require("../icons/facebook.png"),
     linkend:require("../icons/linkend.png"),
-    menu:require("../icons/menu-left.png")
+    menu:require("../icons/menu-left.png"),
+    next:require("../icons/next.png"),
+
 
 
 

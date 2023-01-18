@@ -12,8 +12,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      {/* <RootNavigator /> */}
-      <TestScreen/>
+
+      <RootNavigator />
+      {/* <TestScreen/> */}
     </Provider>
   );
 };

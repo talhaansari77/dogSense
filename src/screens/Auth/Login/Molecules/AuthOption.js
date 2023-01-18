@@ -1,84 +1,49 @@
-import {StyleSheet, Text, View, Platform, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {colors} from '../../../../utils/Colors';
 import CustomText from '../../../../components/CustomText';
+import {scale, ScaledSheet, verticalScale} from 'react-native-size-matters';
+import {colors} from '../../../../utils/Colors';
 import {Montserrat} from '../../../../utils/Fonts';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import CustomTextInput from '../../../../components/CustomTextInput';
 import {Spacer} from '../../../../components/Spacer';
 import {icons} from '../../../../assets/icons';
+import CustomButton from '../../../../components/CustomButton';
 
-
-const AuthDate=[
-    {id:1,img:icons.google},
-    {id:2,img:icons.facebook},
-    {id:3,img:icons.linkend},
-
-]
-
-const AuthOption = () => {
+const AuthOption = ({txt1,txt2}) => {
   return (
     <View>
-      <View style={styles.OrContainer}>
-        <View style={styles.lineSeprator}></View>
-        <CustomText
-          label="OR"
-          fontFamily={Montserrat.SemiBold}
-          fontSize={15}
-          marginLeft={10}
-          marginRight={10}
-        />
-        <View style={styles.lineSeprator}></View>
-      </View>
-      <Spacer height={20} />
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}>
-            {
-                AuthDate.map(item=>{
-                    return(
-                        <View style={styles.authContainer}>
-                        <Image
-                          style={{width: scale(18), height: verticalScale(18)}}
-                          source={item.img}
-                        />
-                      </View>
-                    
-                    )
-                })
-            }
-       
-      </View>
+      <CustomText
+        label={txt1}
+        fontSize={20}
+        color={colors.black}
+        fontFamily={Montserrat.Regular}
+      />
+      <Spacer height={10} />
+      <CustomText
+        label={txt2}
+        fontSize={11}
+        color={colors.grayLight}
+        fontFamily={Montserrat.Light}
+      />
     </View>
   );
 };
 
 export default AuthOption;
 
-const styles = StyleSheet.create({
-  OrContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  lineSeprator: {
-    width: '40%',
-    backgroundColor: colors.black,
-    height: 1,
-  },
-  authContainer: {
-    width: 55,
-    height: 55,
-    borderRadius: 99,
+const styles = ScaledSheet.create({
+  mainContainer: {
+    width: '100%',
+    height: '72%',
+    borderRadius: scale(40),
+    padding: '15@s',
+    backgroundColor: colors.white,
+
     shadowColor: Platform.OS == 'ios' ? '#ced4da' : colors.black,
     shadowRadius: 8,
-    backgroundColor: colors.white,
     elevation: 5,
     alignItems: 'center',
     shadowOpacity: 0.5,
-    justifyContent: 'center',
 
     shadowOffset: {width: 3, height: 5},
   },
