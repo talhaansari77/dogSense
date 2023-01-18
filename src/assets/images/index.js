@@ -4,4 +4,5 @@ export const images = {
   playImage01: require('./playImage01.png'),
   playImage02: require('./playImage02.png'),
   friend: require('./friend.png'),
+  friend1: require('./friend1.png'),
 };
