@@ -1,34 +1,174 @@
-import { View, Text, Button } from 'react-native'
+import {Image, ScrollView, TouchableOpacity, View} from 'react-native';
 import React, {useRef} from 'react';
-// import YoutubePlayer, {YoutubeIframeRef} from "react-native-youtube-iframe";
-import { Spacer } from '../../../../components/Spacer'
-import CustomButton from '../../../../components/CustomButton'
+import {colors} from '../../../../utils/Colors';
+import {Spacer} from '../../../../components/Spacer';
+import {images} from '../../../../assets/images';
+import CustomText from '../../../../components/CustomText';
+import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const TipVideos = () => {
-  const playerRef = useRef();
+  const videoList = [
+    {
+      id: 1,
+      image: images.playImage01,
+      name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+      time: '02:30',
+    },
+    {
+      id: 2,
+      image: images.playImage02,
+      name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+      time: '02:30',
+    },
+    {
+      id: 3,
+      image: images.playImage01,
+      name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+      time: '02:30',
+    },
+    {
+      id: 2,
+      image: images.playImage02,
+      name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+      time: '02:30',
+    },
+  ];
+  // AntDesign hearto
+  // EvilIcons comment
+  // MaterialCommunityIcons share-outline
+  // Fontisto bookmark
   return (
     <View>
-        {/* <YoutubePlayer
-        ref={playerRef}
-        height={400}
-        width={400}
-        videoId={'AVAc1gYLZK0'}
-      />
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexDirection: 'row',
+          width: '100%',
+          paddingHorizontal: 15,
+          height: 40,
+        }}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            // backgroundColor: 'red',
+            width: '50%',
+          }}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <AntDesign name="hearto" size={30} />
+            <Spacer width={4} />
+            <CustomText label="247" color={colors.grey1} />
+          </View>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <EvilIcons name="comment" size={40} />
+            <CustomText label="57" color={colors.grey1} />
+          </View>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <MaterialCommunityIcons name="share-outline" size={35} />
+            <CustomText label="33" color={colors.grey1} />
+          </View>
+        </View>
+        <View>
+          <Fontisto name="bookmark" size={28} />
+        </View>
+      </View>
 
-    <Button
-        title="log details"
-        onPress={() => {
-          playerRef.current?.getCurrentTime().then(
-            currentTime => console.log({currentTime})
-          );
-
-          playerRef.current?.getDuration().then(
-            getDuration => console.log({getDuration})
-          );
-        }}
-      /> */}
+      <Spacer height={30} />
+      <View style={{paddingHorizontal: 14}}>
+        <CustomText label="Related Videos" fontSize="12" />
+      </View>
+      <ScrollView>
+        {videoList.map((item, index) => (
+          <TouchableOpacity
+            activeOpacity={0.6}
+            key={index}
+            style={{
+              display: 'flex',
+              width: '95%',
+              height: 110,
+              justifyContent: 'center',
+              backgroundColor: colors.white,
+              alignSelf: 'center',
+              borderRadius: 10,
+              border: 'solid',
+              borderWidth: 3,
+              borderColor: colors.grey,
+              paddingHorizontal: 3,
+              marginTop: 10,
+            }}>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                width: '100%',
+                // backgroundColor: colors.grey1,
+                alignItems: 'center',
+              }}>
+              <View style={{display: 'flex', flexDirection: 'row', flex: 15}}>
+                <Image
+                  source={item.image}
+                  resizeMode="contain"
+                  style={{height: 105, width: 105}}
+                />
+                <View
+                  style={{width: '75%', padding: 10, justifyContent: 'center'}}>
+                  <CustomText label={item.name} fontSize={9} />
+                  <Spacer height={7} />
+                  <View
+                    style={{
+                      width: 60,
+                      height: 25,
+                      backgroundColor: colors.grey,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 5,
+                    }}>
+                    <View style={{display: 'flex', flexDirection: 'row'}}>
+                      <MaterialCommunityIcons
+                        name="play-box-multiple-outline"
+                        color={colors.grey1}
+                      />
+                      <Spacer width={5} />
+                      <CustomText
+                        label={item.time}
+                        fontSize={8}
+                        color={colors.grey1}
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+              <View style={{display: 'flex', flex: 1}}>
+                <Entypo name="dots-three-vertical" size={20} />
+              </View>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
     </View>
-  )
-}
+  );
+};
 
-export default TipVideos
+export default TipVideos;
