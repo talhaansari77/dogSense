@@ -116,8 +116,8 @@ export default function BottomTabs({navigation}) {
         paddingBottom: verticalScale(15),
         paddingHorizontal: scale(20),
         zIndex: 10,
-        position: 'absolute',
-        bottom: 0,
+        // position: 'absolute',
+        // bottom: 0,
         shadowColor: '#000',
         shadowOffset: {
           width: 0,

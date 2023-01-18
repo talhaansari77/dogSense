@@ -7,11 +7,11 @@ import {icons} from '../assets/icons';
 import commonStyles from '../utils/CommonStyles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const DrawerButton = ({size = 60, onPress}) => {
+const DrawerButton = ({size = 40, onPress}) => {
   const styles = StyleSheet.create({
     drawerButtonContainer: {
-      width: verticalScale(40),
-      height: verticalScale(40),
+      width: verticalScale(size),
+      height: verticalScale(size),
       // marginLeft: verticalScale(10),
       borderColor: colors.white,
       borderRadius: 1000,

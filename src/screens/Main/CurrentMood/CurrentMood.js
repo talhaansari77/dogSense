@@ -1,4 +1,11 @@
-import {FlatList, ScrollView, StyleSheet, Text, View,Dimensions} from 'react-native';
+import {
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import commonStyles, {PH15} from '../../../utils/CommonStyles';
 import TriHeader from '../../../components/TriHeader';
@@ -12,6 +19,7 @@ import {images} from '../../../assets/images';
 import ViewMore from './Molecules/ViewMore';
 import PlansContainer from './Molecules/PlansContainer';
 import CustomImage from '../../../components/CustomImage';
+import BottomTabs from '../../../components/BottomTabs';
 // import CustomDivider from '../../../components/CustomDivider'
 const {width, height} = Dimensions.get('window');
 
@@ -31,7 +39,6 @@ const CurrentMood = () => {
       picture: images.dog,
       backColor: '#FFDBC9',
     },
-
   ];
   const PlansData = [
     {
@@ -47,13 +54,11 @@ const CurrentMood = () => {
       picture: images.planDog,
     },
   ];
-  const NewsData=[
-    {id:1,picture:images.planDog},
-    {id:2,picture:images.planDog},
-    {id:3,picture:images.planDog}
-
-
-  ]
+  const NewsData = [
+    {id: 1, picture: images.planDog},
+    {id: 2, picture: images.planDog},
+    {id: 3, picture: images.planDog},
+  ];
 
   const renderPet = ({item, index}) => {
     console.log('ImageData', item.lastName);
@@ -74,83 +79,77 @@ const CurrentMood = () => {
     );
   };
   return (
-    <ScrollView style={{flex:1}}>
-      
-    <View style={{...commonStyles.IosMainPadding, backgroundColor: '#f8f9fa'}}>
-      <Spacer height={10} />
-      <PH15>
-        <TriHeader />
-      </PH15>
-      <Spacer height={15} />
-      <CustomDivider />
+    <View style={{flex: 1}}>
+      <ScrollView>
+        <View
+          style={{...commonStyles.IosMainPadding, backgroundColor: '#f8f9fa'}}>
+          <Spacer height={10} />
+          <PH15>
+            <TriHeader />
+          </PH15>
+          <Spacer height={15} />
+          <CustomDivider />
 
-      <PH15>
-        <Spacer height={10} />
+          <PH15>
+            <Spacer height={10} />
 
-        <CustomText
-          label={'My Pets'}
-          fontSize={15}
-          color={colors.black}
-          marginRight={5}
-          fontFamily={Montserrat.Regular}
-        />
+            <CustomText
+              label={'My Pets'}
+              fontSize={15}
+              color={colors.black}
+              marginRight={5}
+              fontFamily={Montserrat.Regular}
+            />
 
-        <Spacer height={10} />
+            <Spacer height={10} />
 
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          data={PetData}
-          keyExtractor={item => item.id}
-          renderItem={renderPet}
-        />
-        <Spacer height={20} />
-        <ViewMore txt="Plans" />
-        <Spacer height={20} />
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              data={PetData}
+              keyExtractor={item => item.id}
+              renderItem={renderPet}
+            />
+            <Spacer height={20} />
+            <ViewMore txt="Plans" />
+            <Spacer height={20} />
 
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          data={PlansData}
-          keyExtractor={item => item.id}
-          renderItem={RenderPlain}
-        />
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              data={PlansData}
+              keyExtractor={item => item.id}
+              renderItem={RenderPlain}
+            />
 
-        <Spacer height={20} />
-        <ViewMore txt="News" />
-        <Spacer height={20} />
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          data={NewsData}
-          keyExtractor={item => item.id}
-          renderItem={({item,index})=>{
-            return(
-              <>
-                <CustomImage picture={item.picture}
-              viewWidth={width/2.8}
-              viewHeight={width/3}
+            <Spacer height={20} />
+            <ViewMore txt="News" />
+            <Spacer height={20} />
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              data={NewsData}
+              keyExtractor={item => item.id}
+              renderItem={({item, index}) => {
+                return (
+                  <>
+                    <CustomImage
+                      picture={item.picture}
+                      viewWidth={width / 2.8}
+                      viewHeight={width / 3}
+                    />
+                    <Spacer width={20} />
+                  </>
+                );
+              }}
+            />
+          </PH15>
 
-      
-              />
-                      <Spacer width={20} />
-
-
-              </>
-            
-
-            )
-
-          }}
-        />
-
-       
-      </PH15>
-
-      {/* <CustomDivider/> */}
+          {/* <CustomDivider/> */}
+        </View>
+      </ScrollView>
+      <BottomTabs />
     </View>
-    </ScrollView>
-
   );
 };
 

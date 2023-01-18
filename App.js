@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
 import DetailScreen from './src/screens/Main/DetailScreen/DetailScreen';
 import Activities from './src/screens/Main/Activities/Activities';
+import CurrentMood from './src/screens/Main/CurrentMood/CurrentMood';
+import ReferFriend from './src/screens/Main/ReferFriend/ReferFriend';
+import LoginScreen from './src/screens/Auth/Login/LoginScreen';
 
 LogBox.ignoreLogs(['VirtualizedLists', 'Warning:...']);
 LogBox.ignoreAllLogs();
@@ -13,15 +16,12 @@ const App = () => {
 
   return (
     <Provider store={store}>
-<<<<<<< HEAD
-
-      <RootNavigator />
-      {/* <TestScreen/> */}
-=======
       {/* <RootNavigator /> */}
-      <Activities/>
+      {/* <Activities/> */}
+      {/* <DetailScreen/> */}
+    {/* <CurrentMood/> */}
+    <LoginScreen/>
       <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
->>>>>>> f272efb13a41e8cd69bbd1a2f87d589f7f0ceaa0
     </Provider>
   );
 };

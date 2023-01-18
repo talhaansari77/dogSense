@@ -1,5 +1,4 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import AddDesignScreen from '../../screens/Main/AddDesign/AddDesignScreen';
 import SignOutScreen from '../../screens/Main/SignOut/SignOutScreen';
 import Register from '../../screens/Auth/Register/Register';
 import LoginScreen from '../../screens/Auth/Login/LoginScreen';

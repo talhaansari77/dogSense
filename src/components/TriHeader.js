@@ -8,7 +8,7 @@ import ProfilePic from './ProfilePic';
 const TriHeader = ({onPressMenu, onChangeSearch, onPressProfile}) => {
   return (
     <CustomHeader
-      LeftSide={() => <DrawerButton size={30} onPress={onPressMenu} />}
+      LeftSide={() => <DrawerButton size={35} onPress={onPressMenu} />}
       Center={() => (
         <CustomSearch height={50} width={'70%'} onChangeText={onChangeSearch} />
       )}
