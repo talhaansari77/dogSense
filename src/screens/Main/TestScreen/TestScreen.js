@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, StatusBar} from 'react-native';
 import React from 'react';
 import CustomTextInput from '../../../components/CustomTextInput';
 import {colors} from '../../../utils/Colors';
@@ -14,7 +14,7 @@ import TriHeader from '../../../components/TriHeader';
 const TestScreen = () => {
   return (
     <View
-      style={{flex: 1, paddingHorizontal: 10, backgroundColor: colors.black}}>
+      style={{flex: 1, paddingHorizontal: 10, backgroundColor: colors.white}}>
       <Spacer height={40} />
       {/* <CustomHeader
         LeftSide={() => <DrawerButton size={30} />}
