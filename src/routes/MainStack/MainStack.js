@@ -1,8 +1,7 @@
-import {View, Text, Image, Platform} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import AddDesignScreen from '../../screens/Main/AddDesign/AddDesignScreen';
-import SignOutScreen from '../../screens/Main/SignOut/SignOutScreen';
 import Tips from '../../screens/Main/Tips/Tips';
+import DetailScreen from '../../screens/Main/DetailScreen/DetailScreen';
+import Activities from '../../screens/Main/Activities/Activities';
 
 const MainStack = () => {
   const Stack = createStackNavigator();
@@ -10,8 +9,8 @@ const MainStack = () => {
     <Stack.Navigator
       screenOptions={{headerShown: false}}
       initialRouteName={'Tips'}>
-      <Stack.Screen name="AddDesign" component={AddDesignScreen} />
-      <Stack.Screen name="Signout" component={SignOutScreen} />
+      <Stack.Screen name="Details" component={DetailScreen} />
+      <Stack.Screen name="Activities" component={Activities} />
       <Stack.Screen name="Tips" component={Tips} />
     </Stack.Navigator>
   );
