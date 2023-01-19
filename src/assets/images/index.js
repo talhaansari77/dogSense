@@ -7,7 +7,8 @@ export const images = {
   playImage02: require('./playImage02.png'),
   friend: require('./friend.png'),
   friend1: require('./friend1.png'),
-
+  dog1: require('./dog1.png'),
+  
 
    email: require("./email.png"),
    phone: require("./phone.png"),

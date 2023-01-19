@@ -4,6 +4,8 @@ import CustomHeader from './CustomHeader';
 import DrawerButton from './DrawerButton';
 import CustomSearch from './CustomSearch';
 import ProfilePic from './ProfilePic';
+import { View } from 'react-native';
+import { colors } from '../utils/Colors';
 
 const TriHeader = ({onPressMenu, onChangeSearch, onPressProfile}) => {
   return (
@@ -16,6 +18,7 @@ const TriHeader = ({onPressMenu, onChangeSearch, onPressProfile}) => {
         <ProfilePic size={30} borderWidth={0} onPressProfile={onPressProfile} />
       )}
     />
+
   );
 };
 

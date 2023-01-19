@@ -130,7 +130,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  leftArrow:{
-    height: 20, width: 20 
-}
+  leftArrow: {
+    height: 20,
+    width: 20,
+  },
 });

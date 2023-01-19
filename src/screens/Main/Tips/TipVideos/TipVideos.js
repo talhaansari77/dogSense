@@ -9,6 +9,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {WebView} from 'react-native-webview';
+import {Divider} from 'react-native-elements';
 
 const TipVideos = () => {
   const videoList = [
@@ -42,7 +44,29 @@ const TipVideos = () => {
   // MaterialCommunityIcons share-outline
   // Fontisto bookmark
   return (
-    <View>
+    <View style={{backgroundColor: colors.white}}>
+      {/* <WebView
+        source={{uri: 'https://www.youtube.com/watch?v=GyWeDBkatlc'}}
+        style={{marginTop: 20}}
+      /> */}
+      {/* <WebView
+        style={{flex:1}}
+        javaScriptEnabled={true}
+        source={{uri: 'https://www.youtube.com/embed/ZZ5LpwO-An4?rel=0&autoplay=0&showinfo=0&controls=0'}}
+/> */}
+      <Spacer height={10} />
+
+      <View style={{width: '100%', height: 195, backgroundColor: 'red'}}>
+        <WebView
+          style={{flex: 1}}
+          javaScriptEnabled={true}
+          source={{
+            uri: 'https://www.youtube.com/watch?v=07d2dXHYb94',
+          }}
+        />
+      </View>
+      <Spacer height={10} />
+
       <View
         style={{
           display: 'flex',
@@ -95,7 +119,9 @@ const TipVideos = () => {
         </View>
       </View>
 
-      <Spacer height={30} />
+      <Spacer height={10} />
+      <Divider width={1} color={colors.grey} />
+      <Spacer height={5} />
       <View style={{paddingHorizontal: 14}}>
         <CustomText label="Related Videos" fontSize="12" />
       </View>
