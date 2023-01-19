@@ -11,6 +11,7 @@ import PrivacyPolicy from '../../screens/Main/PrivacyPolicy/PrivacyPolicy';
 import UpdateAccount from '../../screens/Main/UpdateAccount/UpdateAccount';
 import DetailScreen from '../../screens/Main/DetailScreen/DetailScreen';
 import Activities from '../../screens/Main/Activities/Activities';
+import AddDog from '../../screens/Main/AddDog.js/AddDog';
 
 
 const MainStack = () => {
@@ -18,7 +19,7 @@ const MainStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      // initialRouteName={"Signout"}
+      initialRouteName={"AddDog"}
     >
       
       {/* <Stack.Screen name="CurrentMood" component={CurrentMood} /> */}
@@ -33,6 +34,7 @@ const MainStack = () => {
       <Stack.Screen name="ReferFriend" component={ReferFriend} />
       <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
       <Stack.Screen name="UpdateAccount" component={UpdateAccount} />
+      <Stack.Screen name="AddDog" component={AddDog} />
     </Stack.Navigator>
   );
 };

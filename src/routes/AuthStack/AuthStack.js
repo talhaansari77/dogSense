@@ -11,9 +11,9 @@ const AuthStack = ({navigation}) => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      // initialRouteName={"SecurityWallet"}
+      initialRouteName={"Register"}
     >
-     <Stack.Screen name="LoginScreen" component={LoginScreen} />
+     {/* <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
        <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Signout" component={SignOutScreen} />  

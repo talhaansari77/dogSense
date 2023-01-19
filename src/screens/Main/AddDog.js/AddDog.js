@@ -15,7 +15,7 @@ import CustomButton from '../../../components/CustomButton';
 
 const {height, width} = Dimensions.get('window');
 
-const UpdateAccount = () => {
+const AddDog = () => {
   const loginInputData = [
     {id: 1, placeholder: 'Name', leftIcon: images.user, borderWidth: 0.7},
 
@@ -36,18 +36,6 @@ const UpdateAccount = () => {
   ];
   return (
     <View style={{flex: 1, backgroundColor: colors.white}}>
-      {/* <View style={{width: '100%', height: 250, backgroundColor: colors.black,  position: 'relative',
-    top: 0,
-    left: 0, }}>
-       
-      </View>
-      <Spacer height={45} />
-        <View style={{paddingHorizontal: 15, position:"absolute"}}>
-          <CustomHeader
-            LeftSide={() => <AntDesign name="arrowleft" size={24} />}
-            Center={() => <CustomText label="Update Account" fontSize={16} />}
-          />
-        </View> */}
       <View
         style={{
           width: '100%',
@@ -82,7 +70,7 @@ const UpdateAccount = () => {
           )}
           Center={() => (
             <CustomText
-              label="Update Account"
+              label="Add Dog"
               fontSize={16}
               color={colors.white}
             />
@@ -94,15 +82,11 @@ const UpdateAccount = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          // marginTop: 140,
           top: height / 4,
-          // Bottom:120,
-          // backgroundColor: 'red',
           alignSelf: 'center',
           position: 'absolute',
-          // width:380
         }}>
-        <ProfilePic editable />
+        <ProfilePic image={images.dog1} editable />
       </View>
       <Spacer height={90} />
       {loginInputData.map((item, index) => (
@@ -122,4 +106,4 @@ const UpdateAccount = () => {
   );
 };
 
-export default UpdateAccount;
+export default AddDog;
