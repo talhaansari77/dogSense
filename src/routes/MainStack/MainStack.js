@@ -19,7 +19,7 @@ const MainStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={"AddDog"}
+      initialRouteName={"Tips"}
     >
       
       {/* <Stack.Screen name="CurrentMood" component={CurrentMood} /> */}

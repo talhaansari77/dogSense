@@ -37,7 +37,7 @@ const Tips = () => {
           height: 4,
           borderRadius: 1,
         }}
-        style={{backgroundColor: '#f3f3f3'}}
+        style={{backgroundColor: colors.white}}
         renderLabel={this._renderLabel}
         labelStyle={{
           color: 'black',
@@ -49,20 +49,23 @@ const Tips = () => {
     );
   };
   return (
-    <>
+    <View style={{flex:1, backgroundColor:colors.white}}>
       <Spacer height={50} />
-      <View style={{width: 'auto', paddingHorizontal: 10}}>
+      <View style={{width: 'auto', paddingHorizontal: 10, backgroundColor:colors.white}}>
         <TriHeader />
       </View>
       <Spacer height={20} />
+      <Divider width={1.5} color={colors.grey} />
+
       <TabView
         navigationState={{index, routes}}
         renderScene={renderScene}
         renderTabBar={_renderTabBar}
         onIndexChange={setIndex}
-        initialLayout={{width: layout.width}}
+        initialLayout={{width: layout.width, backgroundColor: colors.white}}
+        style={{backgroundColor: colors.white}}
       />
-    </>
+    </View>
   );
 };
 
