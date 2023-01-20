@@ -9,6 +9,7 @@ import CurrentMood from './src/screens/Main/CurrentMood/CurrentMood';
 import ReferFriend from './src/screens/Main/ReferFriend/ReferFriend';
 import LoginScreen from './src/screens/Auth/Login/LoginScreen';
 import TestScreen from './src/screens/Main/TestScreen/TestScreen';
+import UpdateAccount from './src/screens/Main/UpdateAccount/UpdateAccount';
 
 LogBox.ignoreLogs(['VirtualizedLists', 'Warning:...']);
 LogBox.ignoreAllLogs();
@@ -17,12 +18,13 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <RootNavigator />
+      {/* <RootNavigator /> */}
       {/* <Activities/> */}
       {/* <DetailScreen/> */}
     {/* <CurrentMood/> */}
     {/* <LoginScreen/> */}
     {/* <TestScreen/> */}
+    <UpdateAccount/>
     <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
     </Provider>
   );
