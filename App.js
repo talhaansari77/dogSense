@@ -8,6 +8,7 @@ import Activities from './src/screens/Main/Activities/Activities';
 import CurrentMood from './src/screens/Main/CurrentMood/CurrentMood';
 import ReferFriend from './src/screens/Main/ReferFriend/ReferFriend';
 import LoginScreen from './src/screens/Auth/Login/LoginScreen';
+import TestScreen from './src/screens/Main/TestScreen/TestScreen';
 
 LogBox.ignoreLogs(['VirtualizedLists', 'Warning:...']);
 LogBox.ignoreAllLogs();
@@ -21,7 +22,8 @@ const App = () => {
       {/* <DetailScreen/> */}
     {/* <CurrentMood/> */}
     {/* <LoginScreen/> */}
-      <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
+    {/* <TestScreen/> */}
+    <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
     </Provider>
   );
 };
