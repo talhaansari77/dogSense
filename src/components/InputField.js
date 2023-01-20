@@ -40,10 +40,10 @@ const InputField = ({
         placeholder={item.placeholder}
         secureTextEntry={secureTextEntry}
         leftIcon={item.leftIcon}
-        borderColor={focused ===index? colors.primary : colors.grey}
-        iconBorderColor={focused===index ? colors.primary : colors.grey}
+        borderColor={focused ===index? colors.primary : colors.grey2}
+        iconBorderColor={focused===index ? colors.primary : colors.grey2}
         placeholderTextColor={colors.grey3}
-        tintColor={focused===index ? colors.primary : colors.grey}
+        tintColor={focused===index ? colors.primary : colors.grey2}
         borderWidth={1}
         color={colors.black}
       />
