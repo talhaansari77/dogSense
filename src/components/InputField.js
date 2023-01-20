@@ -4,6 +4,7 @@ import CustomTextInput from './CustomTextInput';
 import {colors} from '../utils/Colors';
 import {icons} from '../assets/icons';
 import {images} from '../assets/images';
+import { Spacer } from './Spacer';
 
 const InputField = ({
   placeholder = 'placeholder',
@@ -15,13 +16,20 @@ const InputField = ({
   height,
   width,
   iconWidth,
-  iconHeight
-}) => {
+  iconHeight,
+  data
+}) => { 
   const [focused, setFocused] = useState(false);
+
+  // key={index}
+  // placeholder={item.placeholder}
+  // leftIcon={item.leftIcon}
   return (
+  data.map((item, index) => ( 
     <View>
       <CustomTextInput
-        onPressIn={() => setFocused(true)}
+        onPressIn={() => setFocused(index)}
+        onPress={() => setFocused(index)}
         onChangeText={onChangeText}
         height={height}
         width={width}
@@ -29,17 +37,20 @@ const InputField = ({
         iconHeight={iconHeight}
         value={value}
         keyboardType={keyboardType}
-        placeholder={placeholder}
+        placeholder={item.placeholder}
         secureTextEntry={secureTextEntry}
-        leftIcon={leftIcon}
-        borderColor={focused ? colors.primary : colors.grey2}
-        iconBorderColor={focused ? colors.primary : colors.grey2}
-        placeholderTextColor={colors.grey2}
-        tintColor={focused ? colors.primary : colors.grey2}
+        leftIcon={item.leftIcon}
+        borderColor={focused ===index? colors.primary : colors.grey2}
+        iconBorderColor={focused===index ? colors.primary : colors.grey2}
+        placeholderTextColor={colors.grey3}
+        tintColor={focused===index ? colors.primary : colors.grey2}
         borderWidth={1}
         color={colors.black}
       />
+       
+          <Spacer height={10} />
     </View>
+    ))
   );
 };
 

@@ -23,7 +23,7 @@ import BottomTabs from '../../../components/BottomTabs';
 // import CustomDivider from '../../../components/CustomDivider'
 const {width, height} = Dimensions.get('window');
 
-const CurrentMood = () => {
+const CurrentMood = ({navigation}) => {
   const PetData = [
     {
       id: 1,
@@ -148,7 +148,7 @@ const CurrentMood = () => {
           {/* <CustomDivider/> */}
         </View>
       </ScrollView>
-      <BottomTabs />
+      <BottomTabs navigation={navigation} selected={0} />
     </View>
   );
 };

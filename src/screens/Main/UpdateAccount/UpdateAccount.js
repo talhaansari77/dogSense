@@ -95,16 +95,9 @@ const UpdateAccount = () => {
         <ProfilePic editable image={images.profilePic} />
       </View>
       <Spacer height={90} />
-      {loginInputData.map((item, index) => (
-        <View style={{paddingHorizontal: 20}}>
-          <InputField
-            key={index}
-            placeholder={item.placeholder}
-            leftIcon={item.leftIcon}
-          />
-          <Spacer height={10} />
-        </View>
-      ))}
+      <View style={{paddingHorizontal: 20}}>
+        <InputField data={loginInputData} />
+      </View>
       <Spacer height={50} />
 
       <CustomButton title={'update Profile'} />

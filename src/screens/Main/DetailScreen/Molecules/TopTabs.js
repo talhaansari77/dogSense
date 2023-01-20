@@ -9,8 +9,7 @@ import {icons} from '../../../../assets/icons';
 
 const {height, width} = Dimensions.get('window');
 
-export default function TopTabs({navigation}) {
-  const [selected, setSelected] = useState(false);
+export default function TopTabs({navigation, setSelected}) {
   const [indexMain, setIndexMain] = useState(0);
   const Tabs = [
     {
@@ -55,12 +54,12 @@ export default function TopTabs({navigation}) {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth:index === indexMain ?1:0,
-        borderColor:index === indexMain ? colors.primary : colors.grey3,
+        borderWidth: index === indexMain ? 1 : 0,
+        borderColor: index === indexMain ? colors.primary : colors.grey3,
         borderRadius: 100,
-        backgroundColor:index === indexMain ? colors.white : colors.grey,
+        backgroundColor: index === indexMain ? colors.white : colors.grey,
         // padding:20
-        height:height/20
+        height: height / 20,
       }}>
       <CustomText
         label={props.label}
@@ -94,7 +93,10 @@ export default function TopTabs({navigation}) {
           size={item.size}
           screen={item.screen}
           label={item.label}
-          onPress={() => item.onPress(i)}
+          onPress={() => {
+            item.onPress(i);
+            setSelected(i+1);
+          }}
           index={i}
         />
       ))}
