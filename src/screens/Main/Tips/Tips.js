@@ -7,6 +7,7 @@ import TipArticle from './TipArticle/TipArticle';
 import TriHeader from '../../../components/TriHeader';
 import {colors} from '../../../utils/Colors';
 import {Divider} from 'react-native-elements';
+import BottomTabs from '../../../components/BottomTabs';
 
 const FirstRoute = () => <TipVideos />;
 
@@ -17,7 +18,7 @@ const renderScene = SceneMap({
   second: SecondRoute,
 });
 
-const Tips = () => {
+const Tips = ({navigation}) => {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = React.useState(0);
@@ -65,6 +66,7 @@ const Tips = () => {
         initialLayout={{width: layout.width, backgroundColor: colors.white}}
         style={{backgroundColor: colors.white}}
       />
+      <BottomTabs navigation={navigation} selected={2}/>
     </View>
   );
 };

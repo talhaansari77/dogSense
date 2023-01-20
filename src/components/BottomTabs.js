@@ -1,14 +1,16 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {colors} from '../utils/Colors';
 import CustomText from './CustomText';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {Spacer} from './Spacer';
 import {icons} from '../assets/icons';
+import { useIsFocused } from '@react-navigation/core';
 
 export default function BottomTabs({navigation,goto,selected}) {
   // const [selected, setSelected] = useState(false);
+  const isFocused =useIsFocused();
   const [indexMain, setIndexMain] = useState(selected);
   const Tabs = [
     {
@@ -103,6 +105,10 @@ export default function BottomTabs({navigation,goto,selected}) {
       /> */}
     </TouchableOpacity>
   );
+  useEffect(() => {
+    setIndexMain(selected)
+  }, [isFocused])
+  
 
   return (
     <View
