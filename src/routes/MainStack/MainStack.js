@@ -19,13 +19,14 @@ const MainStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={"Tips"}
+      initialRouteName={"CurrentMood"}
     >
       
       {/* <Stack.Screen name="CurrentMood" component={CurrentMood} /> */}
       <Stack.Screen name="SearchCurrenMood" component={SearchCurrenMood} />
 
 
+      <Stack.Screen name="CurrentMood" component={CurrentMood} />
       <Stack.Screen name="Signout" component={SignOutScreen} />
       <Stack.Screen name="Details" component={DetailScreen} />
       <Stack.Screen name="Activities" component={Activities} />

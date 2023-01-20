@@ -19,7 +19,7 @@ import {Divider} from 'react-native-elements';
 
 const {height, width} = Dimensions.get('window');
 
-const Activities = () => {
+const Activities = ({navigation}) => {
   return (
     <>
       <View style={{flex: 1}}>
@@ -119,7 +119,7 @@ const Activities = () => {
           ))}
         </View>
       </View>
-      <BottomTabs />
+      <BottomTabs navigation={navigation} selected={1}/>
     </>
   );
 };

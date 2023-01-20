@@ -7,18 +7,18 @@ import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {Spacer} from './Spacer';
 import {icons} from '../assets/icons';
 
-export default function BottomTabs({navigation}) {
-  const [selected, setSelected] = useState(false);
-  const [indexMain, setIndexMain] = useState(-1);
+export default function BottomTabs({navigation,goto,selected}) {
+  // const [selected, setSelected] = useState(false);
+  const [indexMain, setIndexMain] = useState(selected);
   const Tabs = [
     {
       name: icons.bear,
       color: colors.primary,
       size: 25,
-      screen: 'SignOutScreen',
+      screen: 'CurrentMood',
       label: 'Current Mood',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('CurrentMood');
         setIndexMain(i);
       },
     },
@@ -26,10 +26,10 @@ export default function BottomTabs({navigation}) {
       name: icons.heartRate,
       color: colors.primary,
       size: 25,
-      screen: 'SignOutScreen',
+      screen: 'Activities',
       label: 'Activity',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('Activities');
         setIndexMain(i);
       },
     },
@@ -37,10 +37,10 @@ export default function BottomTabs({navigation}) {
       name: icons.bulb,
       color: colors.primary,
       size: 25,
-      screen: 'SignOutScreen',
+      screen: 'Tips',
       label: 'Tips',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('Tips');
         setIndexMain(i);
       },
     },
@@ -51,7 +51,7 @@ export default function BottomTabs({navigation}) {
       screen: 'Profile',
       label: 'Profile',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('Profile');
         setIndexMain(i);
       },
     },
