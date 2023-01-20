@@ -18,13 +18,13 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      {/* <RootNavigator /> */}
+      <RootNavigator />
       {/* <Activities/> */}
       {/* <DetailScreen/> */}
     {/* <CurrentMood/> */}
     {/* <LoginScreen/> */}
     {/* <TestScreen/> */}
-    <UpdateAccount/>
+    {/* <UpdateAccount/> */}
     <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
     </Provider>
   );

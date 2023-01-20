@@ -17,26 +17,26 @@ const {height, width} = Dimensions.get('window');
 
 const AddDog = () => {
   const loginInputData = [
-    {id: 1, placeholder: 'Name', leftIcon: images.user, borderWidth: 0.7},
+    {id: 1, placeholder: 'Name', leftIcon: icons.dogIcon, borderWidth: 0.7},
 
-    {id: 2, placeholder: 'Breed', leftIcon: images.email, borderWidth: 0.7},
+    {id: 2, placeholder: 'Breed', leftIcon: icons.dogBreed, borderWidth: 0.7},
     {
       id: 3,
       placeholder: 'Age',
-      leftIcon: images.phone,
+      leftIcon: icons.dogAge,
       borderWidth: 0.7,
     },
 
     {
       id: 4,
       placeholder: 'Date Of Birth',
-      leftIcon: images.lock,
+      leftIcon: icons.birth,
       borderWidth: 0.7,
     },
     {
       id: 5,
       placeholder: 'Gender',
-      leftIcon: images.lock,
+      leftIcon: icons.gender,
       borderWidth: 0.7,
     },
   ];
@@ -91,17 +91,18 @@ const AddDog = () => {
         <ProfilePic image={images.planDog} editable />
       </View>
       <Spacer height={90} />
-      {loginInputData.map((item, index) => (
+      {/* {loginInputData.map((item, index) => ( */}
         <View style={{paddingHorizontal: 20}}>
           <InputField
-            key={index}
-            placeholder={item.placeholder}
-            leftIcon={item.leftIcon}
+            // key={index}
+            // placeholder={item.placeholder}
+            // leftIcon={item.leftIcon}
             height={60}
+            data={loginInputData}
           />
           <Spacer height={15} />
         </View>
-      ))}
+      {/* ))} */}
       <Spacer height={40} />
 
       <CustomButton title={'update Profile'} />

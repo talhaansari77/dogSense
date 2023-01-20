@@ -14,18 +14,14 @@ import Activities from '../../screens/Main/Activities/Activities';
 import AddDog from '../../screens/Main/AddDog.js/AddDog';
 import Logout from '../../screens/Main/Logout/Logout';
 
-
 const MainStack = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={"CurrentMood"}
-    >
-      
+      initialRouteName={'AddDog'}>
       {/* <Stack.Screen name="CurrentMood" component={CurrentMood} /> */}
       <Stack.Screen name="SearchCurrenMood" component={SearchCurrenMood} />
-
 
       <Stack.Screen name="CurrentMood" component={CurrentMood} />
       <Stack.Screen name="Signout" component={SignOutScreen} />

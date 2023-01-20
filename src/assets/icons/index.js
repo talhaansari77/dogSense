@@ -28,6 +28,21 @@ export const icons={
     bone:require("./bx-bone.png"),
     rightCarvan:require("./rightCarvan.png"),
 
+    birth:require("./birth.png"),
+    dogAge:require("./dogAge.png"),
+    dogBreed:require("./dogBreed.png"),
+    dogIcon:require("./dogIcon.png"),
+    gender:require("./gender.png"),
+
+
+
+
+    
+    
+    
+    
+    
+
 
 
 
