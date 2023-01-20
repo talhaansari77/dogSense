@@ -32,10 +32,10 @@ const InputField = ({
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
         leftIcon={leftIcon}
-        borderColor={focused ? colors.primary : colors.grey}
-        iconBorderColor={focused ? colors.primary : colors.grey}
-        placeholderTextColor={colors.grey}
-        tintColor={focused ? colors.primary : colors.grey}
+        borderColor={focused ? colors.primary : colors.grey2}
+        iconBorderColor={focused ? colors.primary : colors.grey2}
+        placeholderTextColor={colors.grey2}
+        tintColor={focused ? colors.primary : colors.grey2}
         borderWidth={1}
         color={colors.black}
       />

@@ -19,30 +19,36 @@ const AddDog = () => {
   const loginInputData = [
     {id: 1, placeholder: 'Name', leftIcon: images.user, borderWidth: 0.7},
 
-    {id: 2, placeholder: 'Email', leftIcon: images.email, borderWidth: 0.7},
+    {id: 2, placeholder: 'Breed', leftIcon: images.email, borderWidth: 0.7},
     {
       id: 3,
-      placeholder: 'Phone Number',
+      placeholder: 'Age',
       leftIcon: images.phone,
       borderWidth: 0.7,
     },
 
     {
       id: 4,
-      placeholder: 'Password',
+      placeholder: 'Date Of Birth',
+      leftIcon: images.lock,
+      borderWidth: 0.7,
+    },
+    {
+      id: 5,
+      placeholder: 'Gender',
       leftIcon: images.lock,
       borderWidth: 0.7,
     },
   ];
   return (
     <View style={{flex: 1, backgroundColor: colors.white}}>
-      <View
+      <Image
+        source={images.planDog}
+        resizeMode={'cover'}
+        blurRadius={5}
         style={{
           width: '100%',
-          height: 300,
-          backgroundColor: colors.black,
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
+          height: 250,
           shadowColor: '#000',
           shadowColor: '#000',
           shadowOffset: {
@@ -69,11 +75,7 @@ const AddDog = () => {
             <AntDesign name="arrowleft" size={24} color={colors.white} />
           )}
           Center={() => (
-            <CustomText
-              label="Add Dog"
-              fontSize={16}
-              color={colors.white}
-            />
+            <CustomText label="Add Dog" fontSize={16} color={colors.white} />
           )}
         />
       </View>
@@ -82,11 +84,11 @@ const AddDog = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          top: height / 4,
+          top: height / 5,
           alignSelf: 'center',
           position: 'absolute',
         }}>
-        <ProfilePic image={images.dog1} editable />
+        <ProfilePic image={images.planDog} editable />
       </View>
       <Spacer height={90} />
       {loginInputData.map((item, index) => (
@@ -95,11 +97,12 @@ const AddDog = () => {
             key={index}
             placeholder={item.placeholder}
             leftIcon={item.leftIcon}
+            height={60}
           />
-          <Spacer height={10} />
+          <Spacer height={15} />
         </View>
       ))}
-      <Spacer height={50} />
+      <Spacer height={40} />
 
       <CustomButton title={'update Profile'} />
     </View>

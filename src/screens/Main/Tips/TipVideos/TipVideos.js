@@ -110,7 +110,13 @@ const TipVideos = () => {
               flexDirection: 'row',
               alignItems: 'center',
             }}>
-            <MaterialCommunityIcons name="share-outline" size={35} />
+            {/* <MaterialCommunityIcons name="share-outline" size={35} /> */}
+            <Image
+              source={images.rightArrow}
+              style={{height: 28, width: 28}}
+              resizeMode="contain"
+            />
+            <Spacer width={4} />
             <CustomText label="33" color={colors.grey1} />
           </View>
         </View>
@@ -153,11 +159,29 @@ const TipVideos = () => {
                 alignItems: 'center',
               }}>
               <View style={{display: 'flex', flexDirection: 'row', flex: 15}}>
-                <Image
-                  source={item.image}
-                  resizeMode="contain"
-                  style={{height: 105, width: 105}}
-                />
+                <View
+                  style={{
+                    height: 105,
+                    width: 105,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Image
+                    source={item.image}
+                    resizeMode="contain"
+                    style={{height: 105, width: 105}}
+                  />
+                  <Image
+                    source={images.playButton}
+                    style={{
+                      position: 'absolute',
+                      height: 40,
+                      width: 40,
+                    }}
+                  />
+                </View>
+
                 <View
                   style={{width: '75%', padding: 10, justifyContent: 'center'}}>
                   <CustomText label={item.name} fontSize={9} />
