@@ -22,9 +22,9 @@ const App = () => {
       {/* <Activities/> */}
       {/* <DetailScreen/> */}
     {/* <CurrentMood/> */}
-    {/* <LoginScreen/> */}
+    <LoginScreen/>
     {/* <TestScreen/> */}
-    <UpdateAccount/>
+    {/* <UpdateAccount/> */}
     <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
     </Provider>
   );

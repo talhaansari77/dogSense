@@ -16,6 +16,7 @@ import {icons} from '../../../assets/icons';
 import CustomTextInput from '../../../components/CustomTextInput';
 import {colors} from '../../../utils/Colors';
 import LoginBottom from './Molecules/LoginBottom';
+import InputField from '../../../components/InputField';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -53,11 +54,13 @@ const LoginScreen = ({navigation}) => {
         txt2={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"}
         />
         <Spacer height={30} />
-        {loginInputData.map((item,index) => {
+        <InputField data={loginInputData}/>
+        {/* {loginInputData.map((item,index) => {
           return (
             <>
               <CustomTextInput
               onPress={()=>setActiveInput(index)}
+              onPressIn={()=>setActiveInput(index)}
                 placeholder={item.placeholder}
                 placeholderTextColor={colors.grayLight}
                 leftIcon={item.leftIcon}
@@ -70,7 +73,7 @@ const LoginScreen = ({navigation}) => {
             </>
 
           );
-        })}
+        })} */}
         <LoginBottom navigation={navigation}/>
       </PH15>
     </SafeAreaView>
