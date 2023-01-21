@@ -36,26 +36,27 @@ const UpdateAccount = () => {
   ];
   return (
     <View style={{flex: 1, backgroundColor: colors.white}}>
-    
-      <View
-        style={{
-          width: '100%',
-          height: 300,
-          backgroundColor: colors.black,
-          borderBottomLeftRadius: 40,
-          borderBottomRightRadius: 40,
-          shadowColor: '#000',
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 3,
-          },
-          shadowOpacity: 0.27,
-          shadowRadius: 4.65,
+        <Image
+          source={images.profilePic}
+          resizeMode={'cover'}
+            blurRadius={1}
+            style={{
+            width: '100%',
+            height: 300,
+            borderBottomLeftRadius: 30,
+            borderBottomRightRadius: 30,
+            shadowColor: '#000',
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 3,
+            },
+            shadowOpacity: 0.27,
+            shadowRadius: 4.65,
 
-          elevation: 6,
-        }}
-      />
+            elevation: 6,
+          }}
+        />
 
       <View
         style={{
@@ -91,19 +92,12 @@ const UpdateAccount = () => {
           position: 'absolute',
           // width:380
         }}>
-        <ProfilePic editable />
+        <ProfilePic editable image={images.profilePic} />
       </View>
       <Spacer height={90} />
-      {loginInputData.map((item, index) => (
-        <View style={{paddingHorizontal: 20}}>
-          <InputField
-            key={index}
-            placeholder={item.placeholder}
-            leftIcon={item.leftIcon}
-          />
-          <Spacer height={10} />
-        </View>
-      ))}
+      <View style={{paddingHorizontal: 20}}>
+        <InputField data={loginInputData} />
+      </View>
       <Spacer height={50} />
 
       <CustomButton title={'update Profile'} />

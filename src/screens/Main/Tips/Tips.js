@@ -7,6 +7,7 @@ import TipArticle from './TipArticle/TipArticle';
 import TriHeader from '../../../components/TriHeader';
 import {colors} from '../../../utils/Colors';
 import {Divider} from 'react-native-elements';
+import BottomTabs from '../../../components/BottomTabs';
 
 const FirstRoute = () => <TipVideos />;
 
@@ -64,6 +65,7 @@ const Tips = ({onPressMenu}) => {
         initialLayout={{width: layout.width, backgroundColor: colors.white}}
         style={{backgroundColor: colors.white}}
       />
+      <BottomTabs navigation={navigation} selected={2}/>
     </View>
   );
 };

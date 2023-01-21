@@ -23,20 +23,13 @@ const MainStack = () => {
       screenOptions={{headerShown: false}}
       initialRouteName={"CustomDrawer"}
     >
-            <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
-
-      
+       <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="CurrentMood" component={CurrentMood} />
-
-
       <Stack.Screen name="SearchCurrenMood" component={SearchCurrenMood} />
-
-
       <Stack.Screen name="Signout" component={SignOutScreen} />
       <Stack.Screen name="Details" component={DetailScreen} />
       <Stack.Screen name="Activities" component={Activities} />
-
       <Stack.Screen name="Tips" component={Tips} />
       <Stack.Screen name="ReferFriend" component={ReferFriend} />
       <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />

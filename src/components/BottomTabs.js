@@ -1,21 +1,23 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {colors} from '../utils/Colors';
 import CustomText from './CustomText';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {Spacer} from './Spacer';
 import {icons} from '../assets/icons';
+import { useIsFocused } from '@react-navigation/core';
 
-export default function BottomTabs({navigation}) {
-  const [selected, setSelected] = useState(false);
-  const [indexMain, setIndexMain] = useState(-1);
+export default function BottomTabs({navigation,goto,selected}) {
+  // const [selected, setSelected] = useState(false);
+  const isFocused =useIsFocused();
+  const [indexMain, setIndexMain] = useState(selected);
   const Tabs = [
     {
       name: icons.bear,
       color: colors.primary,
       size: 25,
-      screen: 'SignOutScreen',
+      screen: 'CurrentMood',
       label: 'Current Mood',
       onPress: i => {
         navigation.navigate('CurrentMood');
@@ -26,7 +28,7 @@ export default function BottomTabs({navigation}) {
       name: icons.heartRate,
       color: colors.primary,
       size: 25,
-      screen: 'SignOutScreen',
+      screen: 'Activities',
       label: 'Activity',
       onPress: i => {
         navigation.navigate('Activities');
@@ -37,7 +39,7 @@ export default function BottomTabs({navigation}) {
       name: icons.bulb,
       color: colors.primary,
       size: 25,
-      screen: 'SignOutScreen',
+      screen: 'Tips',
       label: 'Tips',
       onPress: i => {
         navigation.navigate('Tips');
@@ -103,6 +105,10 @@ export default function BottomTabs({navigation}) {
       /> */}
     </TouchableOpacity>
   );
+  useEffect(() => {
+    setIndexMain(selected)
+  }, [isFocused])
+  
 
   return (
     <View

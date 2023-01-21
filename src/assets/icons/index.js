@@ -6,7 +6,14 @@ export const icons={
     linkend:require("../icons/linkend.png"),
     menu:require("../icons/menu-left.png"),
     next:require("../icons/next.png"),
-
+    balanceScale: require('./balance-scale.png'),
+    heartbeat: require('./heartbeat.png'),
+    fire: require('./fire.png'),
+    sleep: require('./sleep.png'),
+    flood: require('./flood.png'),
+    audio: require('./audioWave.png'),
+    curveLine: require('./curveLine.png'),
+    
     leftArrow:require("./leftArrow.png"),
     genderIcon:require("./genderIcon.png"),
     bear:require("./bear.png"),
@@ -32,6 +39,21 @@ export const icons={
 
 
 
+
+    birth:require("./birth.png"),
+    dogAge:require("./dogAge.png"),
+    dogBreed:require("./dogBreed.png"),
+    dogIcon:require("./dogIcon.png"),
+    gender:require("./gender.png"),
+
+
+
+
+    
+    
+    
+    
+    
 
 
 

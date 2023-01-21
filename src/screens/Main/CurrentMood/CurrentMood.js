@@ -157,12 +157,7 @@ const CurrentMood = ({onPressMenu,showMenu,}) => {
 
 
       </ScrollView>
-      <View style={{position:"absolute",width:"100%",bottom:verticalScale(0)}}>
-        <BottomTabs navigation={navigation}/>
-
-
-        </View>
-
+      <BottomTabs navigation={navigation} selected={0} />
     </View>
   );
 };

@@ -4,6 +4,8 @@ export const colors = {
     grey2: '#A8A8A8',
     greyDark: '#9FACBB',
     grayLight: '#707070',
+    green: '#5BBD37',
+    lightGreen: '#28D0A2',
     black: "#000",
     red: 'red',
     grey:"#e9edf0",
@@ -14,6 +16,7 @@ export const colors = {
     cyan:"#10C8F1",
     brown:"#735139",
     purple:"#5243AC",
+    yellow:"#F9BB07",
   };
   
   

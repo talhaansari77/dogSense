@@ -66,7 +66,6 @@ const Activities = () => {
             color1={colors.black}
             color2={colors.grey3}
             color3={colors.primary}
-            size1={12}
             size2={10}
             size3={10}
           />
@@ -100,9 +99,6 @@ const Activities = () => {
                     color1={colors.black}
                     color2={colors.black}
                     color3={colors.grey3}
-                    size1={12}
-                    size2={9}
-                    size3={8}
                     space={4}
                   />
                 </View>
@@ -125,7 +121,7 @@ const Activities = () => {
           ))}
         </View>
       </View>
-      <BottomTabs navigation={navigation}/>
+      <BottomTabs navigation={navigation} selected={1}/>
     </>
   );
 };
@@ -145,9 +141,9 @@ const Details = ({
   label1,
   label2,
   label3,
-  size1,
-  size2,
-  size3,
+  size1=12,
+  size2=9,
+  size3=8,
   color1,
   color2,
   color3,
