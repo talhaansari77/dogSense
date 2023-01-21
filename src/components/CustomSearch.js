@@ -13,15 +13,17 @@ const CustomSearch = props => {
         height: props.height||verticalScale(45),
         backgroundColor: props.backgroundColor,
         borderRadius: 30,
-        alignSelf: 'center',
+        // alignSelf: 'center',
+        alignItems:'center',
         justifyContent: 'center',
       }}>
       <View
         style={{
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'center',
-          alignSelf: 'center',
+          // justifyContent: 'center',
+          // alignItems:'center',
+          // alignSelf: 'center',
           width: '90%',
         }}>
         <AntDesign name={'search1'} size={24} color={props.iconColor} />

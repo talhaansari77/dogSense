@@ -1,4 +1,6 @@
-import {createStackNavigator,CardStackStyleInterpolator} from '@react-navigation/stack';
+import {
+  createStackNavigator,
+} from '@react-navigation/stack';
 import SignOutScreen from '../../screens/Main/SignOut/SignOutScreen';
 import Register from '../../screens/Auth/Register/Register';
 import LoginScreen from '../../screens/Auth/Login/LoginScreen';
@@ -20,26 +22,69 @@ import {useEffect} from 'react';
 
 const MainStack = ({route}) => {
   const Stack = createStackNavigator();
- const colorModes=route.params
+  const colorModes = route.params;
   return (
     <Stack.Navigator
-      screenOptions={{headerShown: false,
-        screenInterpolator: CardStackStyleInterpolator.forHorizontal,
+      screenOptions={{
+        headerShown: false,
       }}
-      initialRouteName={'CurrentMood'}
-      >
-      <Stack.Screen initialParams={colorModes} name="CustomDrawer" component={CustomDrawer} />
-      <Stack.Screen initialParams={colorModes} name="Profile" component={Profile} />
-      <Stack.Screen initialParams={colorModes} name="CurrentMood" component={CurrentMood} />
-      <Stack.Screen initialParams={colorModes} name="SearchCurrenMood" component={SearchCurrenMood} />
-      <Stack.Screen initialParams={colorModes} name="Signout" component={SignOutScreen} />
-      <Stack.Screen initialParams={colorModes} name="Details" component={DetailScreen} />
-      <Stack.Screen initialParams={colorModes} name="Activities" component={Activities} />
+      initialRouteName={'CurrentMood'}>
+      <Stack.Screen
+        initialParams={colorModes}
+        name="CustomDrawer"
+        component={CustomDrawer}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="Profile"
+        component={Profile}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="CurrentMood"
+        component={CurrentMood}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="SearchCurrenMood"
+        component={SearchCurrenMood}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="Signout"
+        component={SignOutScreen}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="Details"
+        component={DetailScreen}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="Activities"
+        component={Activities}
+      />
       <Stack.Screen initialParams={colorModes} name="Tips" component={Tips} />
-      <Stack.Screen initialParams={colorModes} name="ReferFriend" component={ReferFriend} />
-      <Stack.Screen initialParams={colorModes} name="PrivacyPolicy" component={PrivacyPolicy} />
-      <Stack.Screen initialParams={colorModes} name="UpdateAccount" component={UpdateAccount} />
-      <Stack.Screen initialParams={colorModes} name="AddDog" component={AddDog} />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="ReferFriend"
+        component={ReferFriend}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="PrivacyPolicy"
+        component={PrivacyPolicy}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="UpdateAccount"
+        component={UpdateAccount}
+      />
+      <Stack.Screen
+        initialParams={colorModes}
+        name="AddDog"
+        component={AddDog}
+      />
     </Stack.Navigator>
   );
 };

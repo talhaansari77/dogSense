@@ -1,8 +1,6 @@
-import { SafeAreaView, StyleSheet, Text, View,Dimensions,Image, ScrollView } from 'react-native'
+import {  StyleSheet, Text, View,Dimensions,Image, ScrollView } from 'react-native'
 import React,{useState} from 'react'
 import commonStyles, { PH10, PH15 } from '../../../utils/CommonStyles';
-import LoginBottom from '../Login/Molecules/LoginBottom';
-import { icons } from '../../../assets/icons';
 import { colors } from '../../../utils/Colors';
 import { images } from '../../../assets/images';
 import AuthOption from '../Login/Molecules/AuthOption';
