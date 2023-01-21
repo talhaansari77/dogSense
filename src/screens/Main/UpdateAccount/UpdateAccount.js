@@ -36,25 +36,14 @@ const UpdateAccount = () => {
   ];
   return (
     <View style={{flex: 1, backgroundColor: colors.white}}>
-      {/* <View style={{width: '100%', height: 250, backgroundColor: colors.black,  position: 'relative',
-    top: 0,
-    left: 0, }}>
-       
-      </View>
-      <Spacer height={45} />
-        <View style={{paddingHorizontal: 15, position:"absolute"}}>
-          <CustomHeader
-            LeftSide={() => <AntDesign name="arrowleft" size={24} />}
-            Center={() => <CustomText label="Update Account" fontSize={16} />}
-          />
-        </View> */}
+    
       <View
         style={{
           width: '100%',
           height: 300,
           backgroundColor: colors.black,
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
+          borderBottomLeftRadius: 40,
+          borderBottomRightRadius: 40,
           shadowColor: '#000',
           shadowColor: '#000',
           shadowOffset: {

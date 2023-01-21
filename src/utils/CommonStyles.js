@@ -59,7 +59,10 @@ import { colors } from './Colors';
       justifyContent: 'center',
       alignItems: 'center',
     },
-
+    mainContainer:{
+      flex:1
+    }
+,
     IosPadding:{
       flex: 1,paddingTop:Platform.OS=="ios"?verticalScale(40):5,
       paddingHorizontal:moderateScale(15),

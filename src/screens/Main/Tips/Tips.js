@@ -17,7 +17,7 @@ const renderScene = SceneMap({
   second: SecondRoute,
 });
 
-const Tips = () => {
+const Tips = ({onPressMenu}) => {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = React.useState(0);
@@ -25,7 +25,6 @@ const Tips = () => {
     {key: 'first', title: 'Videos'},
     {key: 'second', title: 'Articles'},
   ]);
-
   _renderTabBar = props => {
     return (
       <TabBar
@@ -52,7 +51,7 @@ const Tips = () => {
     <View style={{flex:1, backgroundColor:colors.white}}>
       <Spacer height={50} />
       <View style={{width: 'auto', paddingHorizontal: 10, backgroundColor:colors.white}}>
-        <TriHeader />
+        <TriHeader onPressMenu={onPressMenu}/>
       </View>
       <Spacer height={20} />
       <Divider width={1.5} color={colors.grey} />

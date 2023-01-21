@@ -16,10 +16,12 @@ import CustomText from '../../../components/CustomText';
 import commonStyles, {PH20} from '../../../utils/CommonStyles';
 import BottomTabs from '../../../components/BottomTabs';
 import {Divider} from 'react-native-elements';
-
+import { useNavigation } from '@react-navigation/native';
 const {height, width} = Dimensions.get('window');
 
 const Activities = () => {
+  const navigation=useNavigation()
+
   return (
     <>
       <View style={{flex: 1}}>
@@ -123,7 +125,7 @@ const Activities = () => {
           ))}
         </View>
       </View>
-      <BottomTabs />
+      <BottomTabs navigation={navigation}/>
     </>
   );
 };

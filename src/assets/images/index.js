@@ -17,7 +17,9 @@ export const images = {
    dog: require("./dog.png"),
    path: require("./path.png"),
    planDog: require("./planDog.jpg"),
-   CalenderDate:require("./CalenderDate.png")
+   CalenderDate:require("./CalenderDate.png"),
+   userimg:require("./userimg.png")
+
 
 
 

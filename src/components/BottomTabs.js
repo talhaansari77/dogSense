@@ -18,7 +18,7 @@ export default function BottomTabs({navigation}) {
       screen: 'SignOutScreen',
       label: 'Current Mood',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('CurrentMood');
         setIndexMain(i);
       },
     },
@@ -29,7 +29,7 @@ export default function BottomTabs({navigation}) {
       screen: 'SignOutScreen',
       label: 'Activity',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('Activities');
         setIndexMain(i);
       },
     },
@@ -40,7 +40,7 @@ export default function BottomTabs({navigation}) {
       screen: 'SignOutScreen',
       label: 'Tips',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('Tips');
         setIndexMain(i);
       },
     },
@@ -51,7 +51,7 @@ export default function BottomTabs({navigation}) {
       screen: 'Profile',
       label: 'Profile',
       onPress: i => {
-        // navigation.navigate('props.screen');
+        navigation.navigate('Profile');
         setIndexMain(i);
       },
     },

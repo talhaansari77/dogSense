@@ -10,7 +10,7 @@ import {Montserrat} from '../../../../utils/Fonts';
 import SearchDogCotainer from './Molecules/SearchDogCotainer';
 import {images} from '../../../../assets/images';
 
-const SearchCurrenMood = () => {
+const SearchCurrenMood = ({navigation}) => {
   const searchData = [
     {id: 1, img: images.dog, name: 'Noble', backgroundColor: '#84E555'},
     {id: 2, img: images.dog, name: 'Matty', backgroundColor: '#D0CEFC'},
@@ -20,7 +20,7 @@ const SearchCurrenMood = () => {
     <View style={{...commonStyles.IosMainPadding, backgroundColor: '#f8f9fa'}}>
       <PH15>
         <Spacer height={10} />
-        <SearchHeader />
+        <SearchHeader navigation={navigation} />
 
         <Spacer height={20} />
         <CustomText
