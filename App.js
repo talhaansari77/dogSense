@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      {/* <RootNavigator /> */}
+      <RootNavigator />
       {/* <Activities/> */}
       {/* <DetailScreen/> */}
     {/* <CurrentMood/> */}

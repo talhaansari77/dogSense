@@ -27,6 +27,33 @@ export const icons={
     capsule:require("./bx-capsule.png"),
     bone:require("./bx-bone.png"),
     rightCarvan:require("./rightCarvan.png"),
+    appSync:require("./AppSync.png"),
+    dogPro:require("./dogPro.png"),
+    heartdog:require("./heartdog.png"),
+    logoutdog:require("./logoutdog.png"),
+    refer:require("./Refer.png"),
+    updateAct:require("./updateAct.png"),
+    privacyPol:require("./privacyPol.png"),
+    addPet:require("./addPet.png"),
+
+
+
+
+
+    birth:require("./birth.png"),
+    dogAge:require("./dogAge.png"),
+    dogBreed:require("./dogBreed.png"),
+    dogIcon:require("./dogIcon.png"),
+    gender:require("./gender.png"),
+
+
+
+
+    
+    
+    
+    
+    
 
 
 

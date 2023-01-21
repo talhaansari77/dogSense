@@ -36,37 +36,27 @@ const UpdateAccount = () => {
   ];
   return (
     <View style={{flex: 1, backgroundColor: colors.white}}>
-      {/* <View style={{width: '100%', height: 250, backgroundColor: colors.black,  position: 'relative',
-    top: 0,
-    left: 0, }}>
-       
-      </View>
-      <Spacer height={45} />
-        <View style={{paddingHorizontal: 15, position:"absolute"}}>
-          <CustomHeader
-            LeftSide={() => <AntDesign name="arrowleft" size={24} />}
-            Center={() => <CustomText label="Update Account" fontSize={16} />}
-          />
-        </View> */}
-      <View
-        style={{
-          width: '100%',
-          height: 300,
-          backgroundColor: colors.black,
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
-          shadowColor: '#000',
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 3,
-          },
-          shadowOpacity: 0.27,
-          shadowRadius: 4.65,
+        <Image
+          source={images.profilePic}
+          resizeMode={'cover'}
+            blurRadius={1}
+            style={{
+            width: '100%',
+            height: 300,
+            borderBottomLeftRadius: 30,
+            borderBottomRightRadius: 30,
+            shadowColor: '#000',
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 3,
+            },
+            shadowOpacity: 0.27,
+            shadowRadius: 4.65,
 
-          elevation: 6,
-        }}
-      />
+            elevation: 6,
+          }}
+        />
 
       <View
         style={{
@@ -102,7 +92,7 @@ const UpdateAccount = () => {
           position: 'absolute',
           // width:380
         }}>
-        <ProfilePic editable />
+        <ProfilePic editable image={images.profilePic} />
       </View>
       <Spacer height={90} />
       <View style={{paddingHorizontal: 20}}>

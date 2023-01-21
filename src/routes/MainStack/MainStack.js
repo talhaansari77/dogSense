@@ -12,6 +12,8 @@ import UpdateAccount from '../../screens/Main/UpdateAccount/UpdateAccount';
 import DetailScreen from '../../screens/Main/DetailScreen/DetailScreen';
 import Activities from '../../screens/Main/Activities/Activities';
 import AddDog from '../../screens/Main/AddDog.js/AddDog';
+import Profile from '../../screens/Main/Profile/Profile';
+import CustomDrawer from '../CustomDrawer/CustomDrawer';
 
 
 const MainStack = () => {
@@ -19,18 +21,15 @@ const MainStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={"CurrentMood"}
+      initialRouteName={"CustomDrawer"}
     >
-      
-      {/* <Stack.Screen name="CurrentMood" component={CurrentMood} /> */}
-      <Stack.Screen name="SearchCurrenMood" component={SearchCurrenMood} />
-
-
+       <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
+      <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="CurrentMood" component={CurrentMood} />
+      <Stack.Screen name="SearchCurrenMood" component={SearchCurrenMood} />
       <Stack.Screen name="Signout" component={SignOutScreen} />
       <Stack.Screen name="Details" component={DetailScreen} />
       <Stack.Screen name="Activities" component={Activities} />
-
       <Stack.Screen name="Tips" component={Tips} />
       <Stack.Screen name="ReferFriend" component={ReferFriend} />
       <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />

@@ -20,10 +20,13 @@ import ViewMore from './Molecules/ViewMore';
 import PlansContainer from './Molecules/PlansContainer';
 import CustomImage from '../../../components/CustomImage';
 import BottomTabs from '../../../components/BottomTabs';
+import { verticalScale } from 'react-native-size-matters';
+import { useNavigation } from '@react-navigation/native';
 // import CustomDivider from '../../../components/CustomDivider'
 const {width, height} = Dimensions.get('window');
 
-const CurrentMood = ({navigation}) => {
+const CurrentMood = ({onPressMenu,showMenu,}) => {
+  const navigation=useNavigation()
   const PetData = [
     {
       id: 1,
@@ -79,13 +82,16 @@ const CurrentMood = ({navigation}) => {
     );
   };
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1,}}>
       <ScrollView>
         <View
-          style={{...commonStyles.IosMainPadding, backgroundColor: '#f8f9fa'}}>
+          style={{ flex:1,backgroundColor: '#f8f9fa',borderTopLeftRadius:showMenu? 20:0,
+          }}>
           <Spacer height={10} />
           <PH15>
-            <TriHeader />
+            <TriHeader 
+            onPressMenu={onPressMenu}
+            />
           </PH15>
           <Spacer height={15} />
           <CustomDivider />
@@ -147,6 +153,9 @@ const CurrentMood = ({navigation}) => {
 
           {/* <CustomDivider/> */}
         </View>
+      
+
+
       </ScrollView>
       <BottomTabs navigation={navigation} selected={0} />
     </View>

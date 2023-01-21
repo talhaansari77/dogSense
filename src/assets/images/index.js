@@ -8,7 +8,13 @@ export const images = {
   friend: require('./friend.png'),
   friend1: require('./friend1.png'),
   dog1: require('./dog1.png'),
+
+  playButton: require('./playButton.png'),
+  rightArrow: require('./rightArrow.png'),
+  profileImage: require('./profileImage.png'),
+
   dog2: require('./dog2.jpeg'),
+
   
 
    email: require("./email.png"),
@@ -18,7 +24,9 @@ export const images = {
    dog: require("./dog.png"),
    path: require("./path.png"),
    planDog: require("./planDog.jpg"),
-   CalenderDate:require("./CalenderDate.png")
+   CalenderDate:require("./CalenderDate.png"),
+   userimg:require("./userimg.png")
+
 
 
 
