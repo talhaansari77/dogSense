@@ -9,20 +9,20 @@ import {Spacer} from '../../../../components/Spacer';
 import {icons} from '../../../../assets/icons';
 import CustomButton from '../../../../components/CustomButton';
 
-const AuthOption = ({txt1,txt2}) => {
+const AuthOption = ({txt1,txt2,textColor}) => {
   return (
     <View>
       <CustomText
         label={txt1}
         fontSize={20}
-        color={colors.black}
+        color={textColor}
         fontFamily={Montserrat.Regular}
       />
       <Spacer height={10} />
       <CustomText
         label={txt2}
         fontSize={11}
-        color={colors.grayLight}
+        color={colors.grey3}
         fontFamily={Montserrat.Light}
       />
     </View>

@@ -149,13 +149,14 @@ const chartsData = [
 ];
 const loremText =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam';
-const DetailScreen = () => {
+const DetailScreen = ({route}) => {
   const [selected, setSelected] = useState(1);
+  const {colorMode, colorMode2, textColor} = route.params;
 
   const NameCom = () => (
-    <View style={styles.NameCom}>
+    <View style={{...styles.NameCom,backgroundColor:colorMode2}}>
       <View style={commonStyles.rowSpaceBetween}>
-        <CustomText label={'George'} fontWeight={'bold'} fontSize={18} />
+        <CustomText label={'George'} fontWeight={'bold'} fontSize={18} color={textColor} />
         <View>
           <Image source={icons.genderIcon} style={{height: 20, width: 20}} />
         </View>
@@ -168,10 +169,10 @@ const DetailScreen = () => {
     </View>
   );
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1,backgroundColor:colorMode}}>
       {/* <Spacer height={Platform.OS === 'ios' ? 40 : 3} /> */}
       <View style={{position: 'absolute', zIndex: 100, paddingHorizontal: 20}}>
-        <Spacer height={Platform.OS === 'ios' ? 40 : 3} />
+        <Spacer height={Platform.OS === 'ios' ? 40 : 40} />
         <CustomHeader
           LeftSide={() => (
             <Image source={icons.leftArrow} style={{...styles.leftArrow}} />
@@ -193,12 +194,12 @@ const DetailScreen = () => {
         <NameCom />
       </View>
       <Spacer height={65} />
-      <TopTabs setSelected={setSelected} />
+      <TopTabs setSelected={setSelected} backgroundColor={colorMode2}  />
       <Spacer height={15} />
       {selected === 1 ? (
         <>
           <PH20>
-            <CustomText label={'George'} fontWeight={'bold'} fontSize={18} />
+            <CustomText label={'George'} fontWeight={'bold'} fontSize={18} color={textColor} />
             <Spacer height={5} />
           </PH20>
           <ScrollView>
@@ -266,7 +267,7 @@ const DetailScreen = () => {
             </ScrollView>
             <Spacer height={20} />
             {/* <Spacer height={100} /> */}
-            <ResponsiveGrid data={chartsData} />
+            <ResponsiveGrid data={chartsData} backgroundColor={colorMode2} textColor={textColor} />
           </ScrollView>
         </>
       )}

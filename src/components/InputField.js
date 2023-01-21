@@ -17,7 +17,7 @@ const InputField = ({
   width,
   iconWidth,
   iconHeight,
-  data
+  data,backgroundColor,textColor
 }) => { 
   const [focused, setFocused] = useState(false);
 
@@ -40,6 +40,7 @@ const InputField = ({
         placeholder={item.placeholder}
         secureTextEntry={secureTextEntry}
         leftIcon={item.leftIcon}
+        backgroundColor={backgroundColor}
         borderColor={focused ===index? colors.primary : colors.grey2}
         iconBorderColor={focused===index ? colors.primary : colors.grey2}
         placeholderTextColor={colors.grey3}

@@ -10,11 +10,11 @@ import {images} from '../../../../assets/images';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').width;
 
-const MyPets = ({item}) => {
+const MyPets = ({item,borderColor}) => {
   return (
       <View >
 
-    <View style={{...styles.mainContainer,backgroundColor:item.backColor}}>
+    <View style={{...styles.mainContainer,backgroundColor:item.backColor,borderColor:borderColor}}>
       <View style={{padding: 20}}>
         <CustomText
           label={item.firstName}
@@ -39,8 +39,8 @@ const MyPets = ({item}) => {
         />
       </View>
     </View>
-    <View style={styles.topCircle}>
-    <View style={{...styles.topInnerCircle,backgroundColor:item.backColor}}>
+    <View style={{...styles.topCircle,borderColor:borderColor}}>
+    <View style={{...styles.topInnerCircle,backgroundColor:item.backColor,borderColor:borderColor}}>
         <Image resizeMode="contain" style={{width:22,height:22}} source={images.path}/>
         
         </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     height: height / 1.5,
     borderRadius: scale(20),
     borderWidth: 1.8,
-    marginTop:10,
+    // marginTop:10,
   
     borderColor: colors.white,
     // padding:10

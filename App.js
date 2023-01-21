@@ -1,4 +1,4 @@
-import {View, Text, LogBox, StatusBar} from 'react-native';
+import {View, Text, LogBox, StatusBar, Platform} from 'react-native';
 import React from 'react';
 import RootNavigator from './src/routes';
 import { Provider } from 'react-redux';
@@ -10,6 +10,8 @@ import ReferFriend from './src/screens/Main/ReferFriend/ReferFriend';
 import LoginScreen from './src/screens/Auth/Login/LoginScreen';
 import TestScreen from './src/screens/Main/TestScreen/TestScreen';
 import UpdateAccount from './src/screens/Main/UpdateAccount/UpdateAccount';
+import Tips from './src/screens/Main/Tips/Tips';
+import { platform } from 'os';
 
 LogBox.ignoreLogs(['VirtualizedLists', 'Warning:...']);
 LogBox.ignoreAllLogs();
@@ -22,9 +24,10 @@ const App = () => {
       {/* <Activities/> */}
       {/* <DetailScreen/> */}
     {/* <CurrentMood/> */}
-    <LoginScreen/>
+    {/* <LoginScreen/> */}
     {/* <TestScreen/> */}
     {/* <UpdateAccount/> */}
+    {/* <Tips/> */}
     <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
     </Provider>
   );

@@ -1,8 +1,8 @@
 import constants from "../constants";
 
 const initialState = {
-  user: { user: {  } },
-  setting: { },
+  user: { },
+  settings: {darkMode:true},
 };
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -17,7 +17,7 @@ const authReducer = (state = initialState, action) => {
       return newState;
     }
     case constants.SETTING: {
-      let newState = { ...state, setting: action.payload };
+      let newState = { ...state, settings: action.payload };
       console.log("SETTING:", newState);
       return newState;
     }

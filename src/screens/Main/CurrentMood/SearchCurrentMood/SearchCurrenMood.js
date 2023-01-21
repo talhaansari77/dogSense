@@ -10,23 +10,24 @@ import {Montserrat} from '../../../../utils/Fonts';
 import SearchDogCotainer from './Molecules/SearchDogCotainer';
 import {images} from '../../../../assets/images';
 
-const SearchCurrenMood = ({navigation}) => {
+const SearchCurrenMood = ({navigation,route}) => {
+  const {colorMode, colorMode2,colorMode3, textColor} = route.params;
   const searchData = [
     {id: 1, img: images.dog, name: 'Noble', backgroundColor: '#84E555'},
     {id: 2, img: images.dog, name: 'Matty', backgroundColor: '#D0CEFC'},
     {id: 3, img: images.dog, name: 'George', backgroundColor: '#F8C3A7'},
   ];
   return (
-    <View style={{...commonStyles.IosMainPadding, backgroundColor: '#f8f9fa'}}>
+    <View style={{...commonStyles.IosMainPadding, backgroundColor: colorMode}}>
       <PH15>
         <Spacer height={10} />
-        <SearchHeader navigation={navigation} />
+        <SearchHeader navigation={navigation} backgroundColor={colorMode3}  />
 
         <Spacer height={20} />
         <CustomText
           label={'Recent Searches'}
           fontSize={12}
-          color={colors.iconGray}
+          color={colors.grey3}
           marginRight={20}
           fontFamily={Montserrat.Regular}
         />
@@ -34,7 +35,7 @@ const SearchCurrenMood = ({navigation}) => {
         {searchData.map(item => {
           return (
             <>
-              <SearchDogCotainer item={item} />
+              <SearchDogCotainer item={item} textColor={textColor} />
               <Spacer height={20}/>
             </>
           );

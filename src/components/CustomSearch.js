@@ -11,7 +11,7 @@ const CustomSearch = props => {
       style={{
         width:  props.width||'95%',
         height: props.height||verticalScale(45),
-        backgroundColor: colors.grey,
+        backgroundColor: props.backgroundColor,
         borderRadius: 30,
         alignSelf: 'center',
         justifyContent: 'center',
@@ -24,7 +24,7 @@ const CustomSearch = props => {
           alignSelf: 'center',
           width: '90%',
         }}>
-        <AntDesign name={'search1'} size={24} color={colors.grey1} />
+        <AntDesign name={'search1'} size={24} color={props.iconColor} />
         <TextInput
           style={[
             {
@@ -39,10 +39,11 @@ const CustomSearch = props => {
               // textAlign: props.textAlign || "center",
               multiline: props.multiline,
               // alignSelf: props.alignItems || "center"
-              //   backgroundColor: 'red',
+                // backgroundColor: 'red',
             },
           ]}
           onChangeText={props.onChangeText}
+          onPressIn={props.onPressIn}
           value={props.value}
           numberOfLines={props.numberOfLines}
           keyboardType={props.keyboardType}

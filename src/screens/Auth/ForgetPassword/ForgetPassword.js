@@ -20,7 +20,8 @@ import SendVerification from './Molecules/SendVerification';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const ForgetPassword = ({navigation}) => {
+const ForgetPassword = ({navigation,route}) => {
+  const {colorMode, colorMode2, textColor,colorMode3} = route.params;
   const [sendVerification, setSendVerification] = useState(false);
   const [activeInput, setActiveInput] = useState(-1)
 
@@ -40,7 +41,7 @@ const ForgetPassword = ({navigation}) => {
   ];
   return (
     <SafeAreaView
-      style={{...commonStyles.container, backgroundColor: colors.white}}>
+      style={{...commonStyles.container, backgroundColor: colorMode}}>
       <PH15>
         <Spacer height={30} />
         <View
@@ -65,6 +66,7 @@ const ForgetPassword = ({navigation}) => {
             <AuthOption
               txt1={'Forgot Password?'}
               txt2={'Enter a new password for your account to get going'}
+              textColor={textColor}
             />
             <Spacer height={30} />
             {loginInputData.map((item,index) => {

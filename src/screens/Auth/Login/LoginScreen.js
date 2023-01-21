@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   Dimensions,
 } from 'react-native';
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import commonStyles, {PH10, PH15} from '../../../utils/CommonStyles';
 import {images} from '../../../assets/images';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
@@ -20,8 +20,9 @@ import InputField from '../../../components/InputField';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const LoginScreen = ({navigation}) => {
-  const [activeInput, setActiveInput] = useState(-1)
+const LoginScreen = ({navigation, route}) => {
+  const {colorMode, colorMode2, textColor, colorMode3} = route.params;
+  const [activeInput, setActiveInput] = useState(-1);
   const loginInputData = [
     {id: 1, placeholder: 'Email', leftIcon: images.email, borderWidth: 0.7},
     {
@@ -32,7 +33,8 @@ const LoginScreen = ({navigation}) => {
     },
   ];
   return (
-    <SafeAreaView style={{...commonStyles.container,backgroundColor:colors.white}}>
+    <SafeAreaView
+      style={{...commonStyles.container, backgroundColor: colorMode}}>
       <PH15>
         <Spacer height={30} />
         <View
@@ -49,12 +51,15 @@ const LoginScreen = ({navigation}) => {
             style={commonStyles.img}
           />
         </View>
-        <AuthOption 
-        txt1={"Log in"}
-        txt2={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"}
+        <AuthOption
+          txt1={'Log in'}
+          txt2={
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'
+          }
+          textColor={textColor}
         />
         <Spacer height={30} />
-        <InputField data={loginInputData}/>
+        <InputField data={loginInputData} />
         {/* {loginInputData.map((item,index) => {
           return (
             <>
@@ -74,7 +79,7 @@ const LoginScreen = ({navigation}) => {
 
           );
         })} */}
-        <LoginBottom navigation={navigation}/>
+        <LoginBottom navigation={navigation} />
       </PH15>
     </SafeAreaView>
   );

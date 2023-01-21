@@ -16,28 +16,30 @@ import CustomText from '../../../components/CustomText';
 import commonStyles, {PH20} from '../../../utils/CommonStyles';
 import BottomTabs from '../../../components/BottomTabs';
 import {Divider} from 'react-native-elements';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 const {height, width} = Dimensions.get('window');
 
-const Activities = () => {
-  const navigation=useNavigation()
-
+const Activities = ({route}) => {
+  const navigation = useNavigation();
+  const {colorMode, colorMode2, textColor,colorMode3} = route.params;
+  console.log(colorMode2);
   return (
     <>
-      <View style={{flex: 1}}>
-        <Spacer height={Platform.OS === 'ios' ? 40 : 3} />
+      <View style={{flex: 1, backgroundColor: colorMode}}>
+        <Spacer height={Platform.OS === 'ios' ? 40 : 40} />
         <PH20>
           <CustomHeader
             LeftSide={() => (
               <Image
                 source={icons.leftArrow}
-                style={{...styles.leftArrow, tintColor: colors.black}}
+                style={{...styles.leftArrow, tintColor: textColor}}
               />
             )}
             Center={() => (
               <CustomText
                 label={'Activities'}
-                color={colors.black}
+                color={textColor}
                 fontSize={14}
               />
             )}
@@ -45,14 +47,12 @@ const Activities = () => {
         </PH20>
         <Spacer height={20} />
         <PH20>
-          <CustomText
-            label={'Notifications'}
-            color={colors.black}
-            fontSize={16}
-          />
+          <CustomText label={'Notifications'} color={textColor} fontSize={16} />
         </PH20>
         <Spacer height={15} />
-        <TouchableOpacity activeOpacity={0.6} style={styles.emergencyAlert}>
+        <TouchableOpacity
+          activeOpacity={0.6}
+          style={{...styles.emergencyAlert, backgroundColor: colorMode3}}>
           <IconContainer
             icon={icons.bxError}
             color={colors.darkCyan}
@@ -62,24 +62,25 @@ const Activities = () => {
           <Details
             label1={'Emergency Alert'}
             label2={'Mobile is not working, check out th..'}
-            label3={'Tap to see >'}
-            color1={colors.black}
+            label3={'Tap to see  '}
+            color1={textColor}
             color2={colors.grey3}
             color3={colors.primary}
             size2={10}
-            size3={10}
+            size3={8}
+            tapToSee
           />
         </TouchableOpacity>
         <Spacer height={20} />
         <PH20>
           <CustomText
             label={'Upcoming Needs'}
-            color={colors.black}
+            color={textColor}
             fontSize={16}
           />
         </PH20>
         <Spacer height={15} />
-        <View style={styles.activitiesList}>
+        <View style={{...styles.activitiesList, backgroundColor: colorMode2}}>
           {activitiesList.map((item, index) => (
             <>
               <TouchableOpacity
@@ -96,8 +97,8 @@ const Activities = () => {
                     label1={item.label1}
                     label2={item.label2}
                     label3={item.label3}
-                    color1={colors.black}
-                    color2={colors.black}
+                    color1={textColor}
+                    color2={textColor}
                     color3={colors.grey3}
                     space={4}
                   />
@@ -121,7 +122,7 @@ const Activities = () => {
           ))}
         </View>
       </View>
-      <BottomTabs navigation={navigation} selected={1}/>
+      <BottomTabs navigation={navigation} selected={1} colorMode={colorMode} />
     </>
   );
 };
@@ -141,13 +142,14 @@ const Details = ({
   label1,
   label2,
   label3,
-  size1=12,
-  size2=9,
-  size3=8,
+  size1 = 12,
+  size2 = 9,
+  size3 = 8,
   color1,
   color2,
   color3,
   space,
+  tapToSee = false,
 }) => (
   <View style={{justifyContent: 'space-between', paddingVertical: 5}}>
     <CustomText
@@ -158,7 +160,18 @@ const Details = ({
     />
     <CustomText label={label2} color={color2} fontSize={size2} />
     {space ? <Spacer height={space} /> : <></>}
-    <CustomText label={label3} color={color3} fontSize={size3} />
+    <View style={commonStyles.row}>
+      <CustomText label={label3} color={color3} fontSize={size3} />
+      {tapToSee ? (
+        <Image
+          source={icons.rightCarvan}
+          style={{height: 10, width: 10}}
+          resizeMode={'contain'}
+        />
+      ) : (
+        <></>
+      )}
+    </View>
   </View>
 );
 

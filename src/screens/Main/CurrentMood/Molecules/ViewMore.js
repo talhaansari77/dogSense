@@ -5,7 +5,7 @@ import {colors} from '../../../../utils/Colors';
 import {Montserrat} from '../../../../utils/Fonts';
 import { icons } from '../../../../assets/icons';
 
-const ViewMore = ({txt}) => {
+const ViewMore = ({txt,textColor}) => {
   return (
     <View
       style={{
@@ -16,21 +16,22 @@ const ViewMore = ({txt}) => {
       <CustomText
         label={txt}
         fontSize={15}
-        color={colors.black}
+        color={textColor}
+        fontWeight={'bold'}
         marginRight={5}
         fontFamily={Montserrat.Regular}
       />
       <View style={{flexDirection:"row",alignItems:"center"}}>
       <CustomText
         label={'View More'}
-        fontSize={12}
+        fontSize={10}
         color={colors.primary}
         marginRight={5}
         fontFamily={Montserrat.Regular}
       />
       <Image source={icons.next}
       resizeMode="contain"
-       style={{width:15,height:15}}/>
+       style={{width:10,height:10}}/>
 
 
       </View>

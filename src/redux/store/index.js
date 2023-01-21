@@ -2,9 +2,9 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 // import thunkMiddleware from "redux-thunk";
 
 import authReducer from '../reducers';
-import myCoinReducer from '../reducers/MyCoinReducer';
+// import myCoinReducer from '../reducers/MyCoinReducer';
 const rootReducer = combineReducers({
-  myCoinReducer: myCoinReducer,
+  authReducer:authReducer
 });
 const store = createStore(rootReducer, applyMiddleware());
 

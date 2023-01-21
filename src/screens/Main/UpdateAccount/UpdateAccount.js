@@ -15,7 +15,8 @@ import CustomButton from '../../../components/CustomButton';
 
 const {height, width} = Dimensions.get('window');
 
-const UpdateAccount = () => {
+const UpdateAccount = ({navigation,route}) => {
+  const {colorMode, colorMode2, textColor} = route.params;
   const loginInputData = [
     {id: 1, placeholder: 'Name', leftIcon: images.user, borderWidth: 0.7},
 
@@ -35,7 +36,7 @@ const UpdateAccount = () => {
     },
   ];
   return (
-    <View style={{flex: 1, backgroundColor: colors.white}}>
+    <View style={{flex: 1, backgroundColor: colorMode}}>
         <Image
           source={images.profilePic}
           resizeMode={'cover'}
@@ -65,7 +66,7 @@ const UpdateAccount = () => {
           paddingHorizontal: 20,
           width: '100%',
         }}>
-        <Spacer height={Platform.OS === 'ios' ? 40 : 3} />
+        <Spacer height={Platform.OS === 'ios' ? 40 : 40} />
         <CustomHeader
           LeftSide={() => (
             <AntDesign name="arrowleft" size={24} color={colors.white} />
@@ -75,6 +76,7 @@ const UpdateAccount = () => {
               label="Update Account"
               fontSize={16}
               color={colors.white}
+              
             />
           )}
         />
@@ -96,7 +98,7 @@ const UpdateAccount = () => {
       </View>
       <Spacer height={90} />
       <View style={{paddingHorizontal: 20}}>
-        <InputField data={loginInputData} />
+        <InputField data={loginInputData} backgroundColor={colorMode2} textColor={textColor} />
       </View>
       <Spacer height={50} />
 

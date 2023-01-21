@@ -8,7 +8,7 @@ import {Spacer} from './Spacer';
 import {icons} from '../assets/icons';
 import { useIsFocused } from '@react-navigation/core';
 
-export default function BottomTabs({navigation,goto,selected}) {
+export default function BottomTabs({navigation,selected,colorMode}) {
   // const [selected, setSelected] = useState(false);
   const isFocused =useIsFocused();
   const [indexMain, setIndexMain] = useState(selected);
@@ -77,7 +77,7 @@ export default function BottomTabs({navigation,goto,selected}) {
             alignItems: 'center',
             justifyContent: 'center',
             borderTopWidth: 2,
-            borderTopColor: index === indexMain ? colors.primary : colors.white,
+            borderTopColor: index === indexMain ? colors.primary : colorMode,
           }}>
           <Spacer height={10} />
           <Image
@@ -117,7 +117,7 @@ export default function BottomTabs({navigation,goto,selected}) {
         // margin: 10,
         // marginHorizontal: 30,
         // justifyContent: 'space-between',
-        backgroundColor: colors.white,
+        backgroundColor:colorMode,
         width: '100%',
         paddingBottom: verticalScale(15),
         paddingHorizontal: scale(20),

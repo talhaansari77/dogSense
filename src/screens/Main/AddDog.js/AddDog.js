@@ -15,7 +15,8 @@ import CustomButton from '../../../components/CustomButton';
 
 const {height, width} = Dimensions.get('window');
 
-const AddDog = () => {
+const AddDog = ({navigation,route}) => {
+  const {colorMode, colorMode2, textColor} = route.params;
   const loginInputData = [
     {id: 1, placeholder: 'Name', leftIcon: icons.dogIcon, borderWidth: 0.7},
 
@@ -41,7 +42,7 @@ const AddDog = () => {
     },
   ];
   return (
-    <View style={{flex: 1, backgroundColor: colors.white}}>
+    <View style={{flex: 1, backgroundColor: colorMode}}>
       <Image
         source={images.planDog}
         resizeMode={'cover'}
@@ -69,7 +70,7 @@ const AddDog = () => {
           paddingHorizontal: 20,
           width: '100%',
         }}>
-        <Spacer height={Platform.OS === 'ios' ? 40 : 3} />
+        <Spacer height={Platform.OS === 'ios' ? 40 : 40} />
         <CustomHeader
           LeftSide={() => (
             <AntDesign name="arrowleft" size={24} color={colors.white} />
@@ -94,18 +95,16 @@ const AddDog = () => {
       {/* {loginInputData.map((item, index) => ( */}
         <View style={{paddingHorizontal: 20}}>
           <InputField
-            // key={index}
-            // placeholder={item.placeholder}
-            // leftIcon={item.leftIcon}
-            height={60}
+            // height={60}
             data={loginInputData}
+            backgroundColor={colorMode2} textColor={textColor} 
           />
           <Spacer height={15} />
         </View>
       {/* ))} */}
-      <Spacer height={40} />
+      <Spacer height={20} />
 
-      <CustomButton title={'update Profile'} />
+      <CustomButton title={'update Profile'} width={'90%'} />
     </View>
   );
 };

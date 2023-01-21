@@ -24,7 +24,7 @@ import {verticalScale} from 'react-native-size-matters';
 // const sizes = {sm: 100, md: 50, lg: 25, xl: 20}
 const sizes = {sm: 50, md: 50, lg: 25, xl: 20};
 
-const ResponsiveGrid = ({data}) => {
+const ResponsiveGrid = ({data,backgroundColor,textColor}) => {
   const [state, setState] = useState('');
   const layout = state => {
     const numCols = Math.floor(100 / sizes[ScreenInfo().mediaSize]);
@@ -79,12 +79,13 @@ const ResponsiveGrid = ({data}) => {
     return (
       <Row
         style={{
-          backgroundColor: 'white',
+          backgroundColor:backgroundColor,
           margin: 5,
 // marginHorizontal:20,
           borderRadius: 20,
           borderWidth: 1,
           borderColor: colors.grey3,
+          
           //   marginLeft:20
         }}>
         <Col fullWidth>
@@ -111,6 +112,7 @@ const ResponsiveGrid = ({data}) => {
                 label={props.label}
                 fontSize={12}
                 fontWeight={'bold'}
+                color={textColor}
               />
               <Image
                 source={props.icon1}

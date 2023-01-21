@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Dimensions, Platform,Image} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, Platform,Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import ProfilePic from './ProfilePic';
 import CustomHeader from './CustomHeader';
@@ -12,7 +12,7 @@ import { images } from '../assets/images';
 
 const {width, height} = Dimensions.get('window');
 
-const ProfileHeader = ({centerText}) => {
+const ProfileHeader = ({centerText,navigation}) => {
   return (
     <>
       <View
@@ -45,7 +45,7 @@ const ProfileHeader = ({centerText}) => {
           paddingHorizontal: 20,
           width: '100%',
         }}>
-        <Spacer height={Platform.OS === 'ios' ? 60 : 10} />
+       <Spacer height={Platform.OS === 'ios' ? 40 : 40} />
         <CustomHeader
         //   LeftSide={() => (
         //     <AntDesign name="arrowleft" size={moderateScale(25)} color={colors.white} />
@@ -58,7 +58,12 @@ const ProfileHeader = ({centerText}) => {
             />
           )}
           RightSide={() => (
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => navigation.navigate('UpdateAccount')}>
+
             <AntDesign name="setting" size={moderateScale(25)} color={colors.white} />
+              </TouchableOpacity>
           )}
         />
          <View

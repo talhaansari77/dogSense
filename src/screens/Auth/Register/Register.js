@@ -12,7 +12,10 @@ import RegisterBottom from './Molecules/RegisterBottom';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const Register = ({navigation}) => {
+const Register = ({navigation,route}) => {
+  const {colorMode, colorMode2, textColor,colorMode3} = route.params;
+
+  
   const [activeInput, setActiveInput] = useState(-1)
 
     const loginInputData = [
@@ -29,9 +32,10 @@ const Register = ({navigation}) => {
         },
       ];
       return (
-          <ScrollView style={{flex:1}}>
+        <View style={{flex:1,backgroundColor:colors.white}}>
+         
+          <ScrollView style={{backgroundColor:colorMode}}>
 
-        <SafeAreaView style={{...commonStyles.container,backgroundColor:colors.white}}>
           <PH15>
             <Spacer height={30} />
             <View
@@ -51,6 +55,7 @@ const Register = ({navigation}) => {
             <AuthOption 
             txt1={"Register"}
             txt2={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"}
+            textColor={textColor}
             />
             <Spacer height={30} />
             {loginInputData.map((item,index) => {
@@ -74,8 +79,9 @@ const Register = ({navigation}) => {
             <RegisterBottom navigation={navigation}/>
             <Spacer height={30}/>
           </PH15>
-        </SafeAreaView>
         </ScrollView>
+
+        </View>
 
       );
 }

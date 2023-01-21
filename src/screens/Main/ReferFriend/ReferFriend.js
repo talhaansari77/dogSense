@@ -8,14 +8,16 @@ import {images} from '../../../assets/images';
 import CustomButton from '../../../components/CustomButton';
 import { colors } from '../../../utils/Colors';
 
-const ReferFriend = () => {
+const ReferFriend = ({navigation,route}) => {
+  const {colorMode, colorMode2, textColor} = route.params;
+
   return (
-    <View>
+    <View style={{backgroundColor:colorMode,flex:1}}>
       <Spacer height={45} />
       <View style={{paddingHorizontal: 15}}>
         <CustomHeader
-          LeftSide={() => <AntDesign name="arrowleft" size={24} />}
-          Center={() => <CustomText label="Refer a Friend" fontSize={16} />}
+          LeftSide={() => <AntDesign name="arrowleft" size={24} color={textColor}/>}
+          Center={() => <CustomText label="Refer a Friend" fontSize={16} color={textColor} />}
         />
       </View>
       <View>
@@ -33,7 +35,7 @@ const ReferFriend = () => {
       </View>
       <Spacer height={70} />
 
-      <CustomText label="Refer Your Friend" alignSelf="center" fontSize={22} />
+      <CustomText label="Refer Your Friend" alignSelf="center" fontSize={22} color={textColor} />
       <Spacer height={10} />
 
       <View style={{paddingHorizontal: 20}}>

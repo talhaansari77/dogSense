@@ -57,7 +57,7 @@ const CustomTextInput = ({
             paddingLeft: props.paddingLeft,
             borderColor:props.borderColor,
             borderWidth:props.borderWidth,
-            backgroundColor: colors.white,
+            // backgroundColor: colors.white,
 
            
           },
@@ -69,6 +69,7 @@ const CustomTextInput = ({
               height: iconHeight || verticalScale(49),
               // marginLeft: verticalScale(10),
               borderColor: props.iconBorderColor,
+              
               // borderWidth:1,
               borderTopWidth:0.5,
               borderLeftWidth:0.5,
@@ -76,7 +77,7 @@ const CustomTextInput = ({
               borderRightWidth:1,
               padding:10,
               borderRadius: moderateScale(100),
-              backgroundColor:colors.white,
+              backgroundColor: props.backgroundColor,
               alignItems:"center",
               justifyContent:"center"
 

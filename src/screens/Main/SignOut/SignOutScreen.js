@@ -8,6 +8,7 @@ import {verticalScale} from 'react-native-size-matters';
 import UserDetail from './Molecules/UserDetail';
 
 const SignOutScreen = () => {
+  
   return (
     <View style={commonStyles.IosPadding}>
       <PH20>

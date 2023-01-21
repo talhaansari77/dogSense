@@ -7,7 +7,7 @@ import {icons} from '../assets/icons';
 import commonStyles from '../utils/CommonStyles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const DrawerButton = ({size = 40, onPress}) => {
+const DrawerButton = ({size = 40, onPress,backgroundColor,iconColor}) => {
   const styles = StyleSheet.create({
     drawerButtonContainer: {
       width: verticalScale(size),
@@ -15,7 +15,7 @@ const DrawerButton = ({size = 40, onPress}) => {
       // marginLeft: verticalScale(10),
       borderColor: colors.white,
       borderRadius: 1000,
-      backgroundColor: colors.grey,
+      backgroundColor: backgroundColor,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -29,7 +29,7 @@ const DrawerButton = ({size = 40, onPress}) => {
         style={{
           height: size / 1.5,
           width: size / 1.5,
-          tintColor: colors.greyDark,
+          tintColor: iconColor,
         }}
         source={icons.menu}
         resizeMode={'contain'}

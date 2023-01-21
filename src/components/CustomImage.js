@@ -5,7 +5,7 @@ import commonStyles from '../utils/CommonStyles';
 import {scale} from 'react-native-size-matters';
 const {width, height} = Dimensions.get('window');
 
-const CustomImage = ({picture, viewWidth, viewHeight,marginTop,marginVertical}) => {
+const CustomImage = ({picture, viewWidth, viewHeight,marginTop,marginVertical,borderColor}) => {
   return (
     <View
       style={{
@@ -14,7 +14,7 @@ const CustomImage = ({picture, viewWidth, viewHeight,marginTop,marginVertical}) 
         borderRadius: scale(20),
         borderWidth: 1.8,
         marginVertical:marginVertical,
-        borderColor: colors.white,
+        borderColor: borderColor,
         overflow: 'hidden',
       }}>
       <Image style={commonStyles.img} source={picture} />

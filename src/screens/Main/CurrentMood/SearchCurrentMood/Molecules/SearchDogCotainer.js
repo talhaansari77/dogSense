@@ -8,7 +8,7 @@ import {Montserrat} from '../../../../../utils/Fonts';
 import {scale, verticalScale} from 'react-native-size-matters';
 import commonStyles from '../../../../../utils/CommonStyles';
 
-const SearchDogCotainer = ({item}) => {
+const SearchDogCotainer = ({item,textColor}) => {
   return (
     <View
       style={{
@@ -28,7 +28,7 @@ const SearchDogCotainer = ({item}) => {
         <CustomText
           label={item.name}
           fontSize={15}
-          color={colors.black}
+          color={textColor}
           marginRight={20}
           fontFamily={Montserrat.Regular}
         />
